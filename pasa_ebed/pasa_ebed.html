@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu-hu" dir="ltr" lang="hu-hu"><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Pannonia Sacra Katolikus Általános Iskola - Ebéd</title>
+  <style type="text/css">
+  </style>
+</head>
+
+<body> 
+
+<script>
+
+var data = [ 'e-kcs', 'nk-kcs', 're-kcs', 'eu-kcs', 'd-kcs',
+             'e-ncs', 'nk-ncs', 're-ncs', 'eu-ncs', 'd-ncs' ];
+
+var sep = ',';
+
+function g( id ) {
+  return document.getElementById( id );
+}
+
+function calc() {
+  lastname = g('lastname').value;
+
+  ncs = ''; // ha nagycsaládos, akkor 'ncs, ' lesz az értéke :)
+
+  sum = 0;
+
+  msg = '';
+
+  first = true;
+
+  for (i = 0; i < data.length; i++) {
+    code = data[i];
+    [ item, fam ] = code.split('-');
+    codesum = code + '-o';
+
+    input = g(code).value;
+    //msg += '[input: ' + input + ']';
+    if ( input.trim() != '' ) {
+      if ( code.endsWith('-ncs') ) { ncs = 'ncs, '; }
+      names = input.split(sep);
+      for (j = 0; j < names.length; j++) {
+        name = names[j].trim();
+        // azért még ide kéne vmi ellenőrzés talán...
+        if ( first ) {
+          first = false;
+        } else {
+          msg += ', ';
+        }
+        msg += ' ' + name + ' ' + item;
+
+        amount = g(codesum).innerHTML;
+        //msg += '[amount: ' + amount + ']';
+        sum += Number(amount);
+      }
+    }
+  }
+
+  g('sum').innerHTML = sum;
+
+  g('msg').innerHTML = ncs + lastname + msg;
+
+}
+
+</script>
+
+<p style="text-align: center;"><span style="text-decoration: underline; font-size: 14pt;"><span style="color: #800000; text-decoration: underline;"><strong>Ebédbefizetés 2018. október hónapra</strong></span></span></p>
+<div style="margin-top: 2em; margin-bottom: 1em">
+vezetéknév: <input type="text" size="15" id="lastname"></input>
+</div>
+<table align="center">
+<thead>
+<tr><th style="text-align: left;"><span style="font-size: small; color: #800000;">19 napra</span></th><th colspan="3"><span style="font-size: small;">Kiscsaládos</span></th><th colspan="3"><span style="font-size: small;">Nagycsaládos</span></th></tr>
+</thead>
+<tbody>
+
+<tr>
+<td>Ebéd</td>
+<td style="text-align: right;" id="e-kcs-o">9120</td><td>Ft</td>
+ <td><input type="text" size="15" id="e-kcs"></input></td>
+<td style="text-align: right;" id="e-ncs-o">4560</td><td>Ft</td>
+ <td><input type="text" size="15" id="e-ncs"></input></td>
+</tr>
+
+<tr>
+<td>Napközi (reggeli, ebéd, uzsonna)</td>
+<td style="text-align: right;" id="nk-kcs-o">11970</td><td>Ft</td>
+ <td><input type="text" size="15" id="nk-kcs"></input></td>
+<td style="text-align: right;" id="nk-ncs-o">5985</td><td>Ft</td>
+ <td><input type="text" size="15" id="nk-ncs"></input></td>
+</tr>
+
+<tr>
+<td>Reggeli és ebéd</td>
+<td style="text-align: right;" id="re-kcs-o">10640</td><td>Ft</td>
+ <td><input type="text" size="15" id="re-kcs"></input></td>
+<td style="text-align: right;" id="re-ncs-o">5320</td><td>Ft</td>
+ <td><input type="text" size="15" id="re-ncs"></input></td>
+</tr>
+
+<tr>
+<td>Ebéd és uzsonna</td>
+<td style="text-align: right;" id="eu-kcs-o">10640</td><td>Ft</td>
+ <td><input type="text" size="15" id="eu-kcs"></input></td>
+<td style="text-align: right;" id="eu-ncs-o">5320</td><td>Ft</td>
+ <td><input type="text" size="15" id="eu-ncs"></input></td>
+</tr>
+
+<tr>
+<td>Diétás ebéd</td>
+<td style="text-align: right;" id="d-kcs-o">23940</td><td>Ft</td>
+ <td><input type="text" size="15" id="d-kcs"></input></td>
+<td style="text-align: right;" id="d-ncs-o">11970</td><td>Ft</td>
+ <td><input type="text" size="15" id="d-ncs"></input></td>
+</tr>
+
+</tbody>
+</table>
+
+<div style="margin-top: 2em">
+<button type="button" style="font-size: small" onclick="calc()">
+hajrá!
+</button>
+</div>
+
+<div style="margin-top: 1em">
+fizetendő összeg: <span id="sum" style="font-weight: bold"></span>
+</div>
+
+<div style="margin-top: 1em">
+banki közlemény: <span id="msg" style="font-weight: bold"></span>
+</div>
+
+<!--div style="margin-top: 1em">
+<code>(minta: ncs, Sass Lenke 8b e, Ilona 5c nk, János 3a nk)</code>
+</div-->
+
+</body></html>
+
