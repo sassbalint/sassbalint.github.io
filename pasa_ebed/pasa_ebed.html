@@ -11,7 +11,7 @@
 
 <script>
 
-var data = [ 'e', 'nk', 're', 'eu', 'd' ];
+var fields = [ 'e', 'nk', 're', 'eu', 'd' ];
 
 var sep = ',';
 
@@ -22,21 +22,34 @@ function g( id ) {
 function calc() {
   lastname = g('lastname').value;
 
-  fam = ( g('fam-ncs').checked ? 'ncs' : 'kcs' );
-
   sum = 0;
 
   msg = '';
 
   first = true;
 
-  for (i = 0; i < data.length; i++) {
-    item = data[i];
+  // ha 3<, akkor mindenképp ncs legyen
+  //
+  // itt előre mgszámoljuk, hogy lehet ezt a ciklust + split-et megspórolni?
+  // a másodikat lehetne megspórolni esetleg... XXX de jó lesz így :)
+  n = 0;
+  for (i = 0; i < fields.length; i++) {
+    item = fields[i];
+    input = g(item).value;
+    if ( input.trim() != '' ) {
+      n += input.split(sep).length;
+    }
+  }
+  if ( n >= 3 ) { g('fam-ncs').checked = true; }
+
+  fam = ( g('fam-ncs').checked ? 'ncs' : 'kcs' );
+
+  for (i = 0; i < fields.length; i++) {
+    item = fields[i];
     code = item + '-' + fam;
     codesum = code + '-o';
 
     input = g(item).value;
-    //msg += '[input: ' + input + ']';
     if ( input.trim() != '' ) {
       names = input.split(sep);
       for (j = 0; j < names.length; j++) {
@@ -50,7 +63,6 @@ function calc() {
         msg += ' ' + name + ' ' + item;
 
         amount = g(codesum).innerHTML;
-        //msg += '[amount: ' + amount + ']';
         sum += Number(amount);
       }
     }
@@ -78,7 +90,7 @@ vezetéknév: <input type="text" size="15" id="lastname"></input>
  <th colspan="2"><span style="font-size: small;">Nagycsaládos</span><br/>
   <input type="radio" id="fam-ncs" name="fam" value="ncs"></input>
  </th>
- <th><span style="font-size: small;">keresztnév osztály, keresztnév osztály, ...</span>
+ <th><span style="font-size: small;">keresztnév osztály, keresztnév osztály, ...</span> <span style="font-size: 50%">(több gyerek esetén nagyon fontos a vesszővel való elválasztás!)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -136,8 +148,15 @@ banki közlemény: <span id="msg" style="font-weight: bold"></span>
 </div>
 
 <div style="margin-top: 1em">
-<code>(ha min. 3 input van, akkor mindenképp legyen ncs!)</code>
-</div-->
+<span id="debug" style="font-weight: bold"></span>
+</div>
+
+<!--
+
+TODO
+ * ha min. 3 input van, akkor mindenképp legyen ncs!
+
+-->
 
 <!--div style="margin-top: 1em">
 <code>(minta: ncs, Sass Lenke 8b e, Ilona 5c nk, János 3a nk)</code>
