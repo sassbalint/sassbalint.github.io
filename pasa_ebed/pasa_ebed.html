@@ -7,12 +7,11 @@
   </style>
 </head>
 
-<body> 
+<body onLoad="g('fam-kcs').checked = true;">
 
 <script>
 
-var data = [ 'e-kcs', 'nk-kcs', 're-kcs', 'eu-kcs', 'd-kcs',
-             'e-ncs', 'nk-ncs', 're-ncs', 'eu-ncs', 'd-ncs' ];
+var data = [ 'e', 'nk', 're', 'eu', 'd' ];
 
 var sep = ',';
 
@@ -23,7 +22,7 @@ function g( id ) {
 function calc() {
   lastname = g('lastname').value;
 
-  ncs = ''; // ha nagycsaládos, akkor 'ncs, ' lesz az értéke :)
+  fam = ( g('fam-ncs').checked ? 'ncs' : 'kcs' );
 
   sum = 0;
 
@@ -32,14 +31,13 @@ function calc() {
   first = true;
 
   for (i = 0; i < data.length; i++) {
-    code = data[i];
-    [ item, fam ] = code.split('-');
+    item = data[i];
+    code = item + '-' + fam;
     codesum = code + '-o';
 
-    input = g(code).value;
+    input = g(item).value;
     //msg += '[input: ' + input + ']';
     if ( input.trim() != '' ) {
-      if ( code.endsWith('-ncs') ) { ncs = 'ncs, '; }
       names = input.split(sep);
       for (j = 0; j < names.length; j++) {
         name = names[j].trim();
@@ -60,7 +58,7 @@ function calc() {
 
   g('sum').innerHTML = sum;
 
-  g('msg').innerHTML = ncs + lastname + msg;
+  g('msg').innerHTML = fam + ', ' + lastname + msg;
 
 }
 
@@ -72,48 +70,52 @@ vezetéknév: <input type="text" size="15" id="lastname"></input>
 </div>
 <table align="center">
 <thead>
-<tr><th style="text-align: left;"><span style="font-size: small; color: #800000;">19 napra</span></th><th colspan="3"><span style="font-size: small;">Kiscsaládos</span></th><th colspan="3"><span style="font-size: small;">Nagycsaládos</span></th></tr>
+<tr>
+ <th style="text-align: left;"><span style="font-size: small; color: #800000;">19 napra</span></th>
+ <th colspan="2"><span style="font-size: small;">Kiscsaládos</span><br/>
+  <input type="radio" id="fam-kcs" name="fam" value="kcs"></input>
+ </th>
+ <th colspan="2"><span style="font-size: small;">Nagycsaládos</span><br/>
+  <input type="radio" id="fam-ncs" name="fam" value="ncs"></input>
+ </th>
+ <th><span style="font-size: small;">keresztnév osztály, keresztnév osztály, ...</span>
+</tr>
 </thead>
 <tbody>
 
 <tr>
 <td>Ebéd</td>
 <td style="text-align: right;" id="e-kcs-o">9120</td><td>Ft</td>
- <td><input type="text" size="15" id="e-kcs"></input></td>
 <td style="text-align: right;" id="e-ncs-o">4560</td><td>Ft</td>
- <td><input type="text" size="15" id="e-ncs"></input></td>
+ <td><input type="text" size="15" id="e"></input></td>
 </tr>
 
 <tr>
 <td>Napközi (reggeli, ebéd, uzsonna)</td>
 <td style="text-align: right;" id="nk-kcs-o">11970</td><td>Ft</td>
- <td><input type="text" size="15" id="nk-kcs"></input></td>
 <td style="text-align: right;" id="nk-ncs-o">5985</td><td>Ft</td>
- <td><input type="text" size="15" id="nk-ncs"></input></td>
+ <td><input type="text" size="15" id="nk"></input></td>
 </tr>
 
 <tr>
 <td>Reggeli és ebéd</td>
 <td style="text-align: right;" id="re-kcs-o">10640</td><td>Ft</td>
- <td><input type="text" size="15" id="re-kcs"></input></td>
 <td style="text-align: right;" id="re-ncs-o">5320</td><td>Ft</td>
- <td><input type="text" size="15" id="re-ncs"></input></td>
+ <td><input type="text" size="15" id="re"></input></td>
 </tr>
 
 <tr>
 <td>Ebéd és uzsonna</td>
 <td style="text-align: right;" id="eu-kcs-o">10640</td><td>Ft</td>
- <td><input type="text" size="15" id="eu-kcs"></input></td>
 <td style="text-align: right;" id="eu-ncs-o">5320</td><td>Ft</td>
- <td><input type="text" size="15" id="eu-ncs"></input></td>
+ <td><input type="text" size="15" id="eu"></input></td>
 </tr>
 
 <tr>
 <td>Diétás ebéd</td>
 <td style="text-align: right;" id="d-kcs-o">23940</td><td>Ft</td>
- <td><input type="text" size="15" id="d-kcs"></input></td>
 <td style="text-align: right;" id="d-ncs-o">11970</td><td>Ft</td>
- <td><input type="text" size="15" id="d-ncs"></input></td>
+ <td><input type="text" size="15" id="d"></input></td>
 </tr>
 
 </tbody>
@@ -132,6 +134,10 @@ fizetendő összeg: <span id="sum" style="font-weight: bold"></span>
 <div style="margin-top: 1em">
 banki közlemény: <span id="msg" style="font-weight: bold"></span>
 </div>
+
+<div style="margin-top: 1em">
+<code>(ha min. 3 input van, akkor mindenképp legyen ncs!)</code>
+</div-->
 
 <!--div style="margin-top: 1em">
 <code>(minta: ncs, Sass Lenke 8b e, Ilona 5c nk, János 3a nk)</code>
