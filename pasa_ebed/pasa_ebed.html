@@ -15,6 +15,8 @@ var fields = [ 'e', 'nk', 're', 'eu', 'd' ];
 
 var sep = ',';
 
+var maxmsg = 57; // OTP: 57 karaktert bír <-> Raiff 96-ot hirdet :)
+
 function g( id ) {
   return document.getElementById( id );
 }
@@ -24,7 +26,7 @@ function calc() {
 
   sum = 0;
 
-  msg = '';
+  itemmsg = '';
 
   first = true;
 
@@ -58,9 +60,9 @@ function calc() {
         if ( first ) {
           first = false;
         } else {
-          msg += ', ';
+          itemmsg += ', ';
         }
-        msg += ' ' + name + ' ' + item;
+        itemmsg += ' ' + name + ' ' + item;
 
         amount = g(codesum).innerHTML;
         sum += Number(amount);
@@ -68,9 +70,18 @@ function calc() {
     }
   }
 
-  g('sum').innerHTML = sum;
+  g('sum').innerHTML = String(sum) + ' Ft';
 
-  g('msg').innerHTML = fam + ', ' + lastname + msg;
+  msg = fam + ', ' + lastname + itemmsg;
+
+  g('msg').innerHTML = msg;
+
+  if ( msg.length > maxmsg ) {
+    g('msgmsg').innerHTML =
+      '(ez ' + msg.length + ' karakter! - az OTP-nél max. ' + maxmsg + ' karakter lehet)';
+  } else {
+    g('msgmsg').innerHTML = '';
+  }
 
 }
 
@@ -144,7 +155,8 @@ fizetendő összeg: <span id="sum" style="font-weight: bold"></span>
 </div>
 
 <div style="margin-top: 1em">
-banki közlemény: <span id="msg" style="font-weight: bold"></span>
+banki közlemény: <span id="msg" style="font-weight: bold"></span><br/>
+<span id="msgmsg" style="font-size: 80%"></span><br/>
 </div>
 
 <div style="margin-top: 1em">
@@ -154,7 +166,15 @@ banki közlemény: <span id="msg" style="font-weight: bold"></span>
 <!--
 
 TODO
- * ha min. 3 input van, akkor mindenképp legyen ncs!
+ - trim() után kell még, hogy a sep -t is leszedjük a széléről, ha van :)
+   vagyis: ha üres string egy elem, akkor azt kukázzuk!
+   igen, ez lesz a jó, olyasmi kell, hogy "next if name == ''" :)
+ - a banki közlemény lehetséges hosszát tartsuk be! :) - mennyi is az? :)
+   ha semmiképp nem bírjuk kellően lerövidíteni (pl. 6 gyerek),
+   akkor írjunk ki üzenetet! :)
+   1. csökkentsük a keresztneveket 5, 4, 3, 2, 1 karakterre :)
+   2. tüntessük el a szóközt -- talán ez mégse jó, szóval utóbb!
+ + 2018.09.21. ha min. 3 input van, akkor mindenképp legyen ncs!
 
 -->
 
