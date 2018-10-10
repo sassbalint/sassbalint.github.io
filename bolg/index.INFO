@@ -1,9 +1,89 @@
 
 <a target="_blank" href="https://sassbalint.github.io" style="text-decoration: none; font-size: 250%">&larr;</a>
 
-<em>&bdquo;Bolgok, akik programoznak, mert teremtenek valamit, ami egyszercsak életre kel és működik.&rdquo;</em>
+<em>,,Bolgok, akik programoznak, mert teremtenek valamit, ami egyszercsak életre kel és működik.''</em>
 BIB{Mt}{5}{1-10}
 
+<br/>
 2018. október 10. -- hierarchikus menü és ontológia
 
-:)
+Csomó program bír hieararchikus menürendszerrel:
+a  _Mentés_  általában a  _Fájl_  menüben van,
+a  _Teljes képernyő_  meg a  _Nézet_  alatt.
+De hol van vajon az  _Elválasztás?_ 
+Ismerek olyat, aki szerint nem jó ötlet,
+hogy a Wordben a  _Elrendezés_  alatt van. 
+Vagy a  _Hivatkozás_  menüben? Hát nem is tudom, mindig meg kell nézni. 
+
+A call centerek is sokszor hasonló hierarchikus struktúrában működnek.
+Gondolhatnánk, hogy a hierarchia itt nagyon jó dolog,
+szép dolog, mert rendszerezi, könnyebben áttekinthetővé teszi a rendszert.
+
+ -Úgy tűnik, hogy ez nincs így.- 
+A hierarchia sok esetben inkább hátrány.
+A keresést -- adott funkció megkeresését -- kifejezetten megnehezítheti.
+(Akár szimpatikusabbnak tűnhet a lapos szerkezet,
+ahol minden egy listában van,
+aztán <code>Ctrl-F</code> és megvagyunk.)
+
+A call centereknél
+annyival rosszabb a helyzet, hogy ha az ember egyszer
+rossz útra tévedt, rossz gombot nyomott, akkor nagyon körülményes
+visszatalálni a célhoz.
+Vajon hányan nyomnak legszívesebben kapásból 0-t, azaz
+fordulnak inkább rögtön az ügyintézőhöz?
+
+Régóta próbálkoznak az emberek  _taxonómiák/ontológiák_ ,
+azaz olyan fogalmi rendszerek, hálózatok építésével,
+amik leírják a ,,világot'' (ambíciózus eset)
+vagy akár csak egy program menürendszerét (kevésbé ambíciózus eset).
+Megalkotjuk a felsőbb szintű fogalmakat,
+alátesszük az alsóbb szintű fogalmakat,
+azok alá a legalul lévőket,
+azaz egy szép hierarchikus fa-struktúrába rendezzük a dolgainkat.
+
+A bökkenő ott van, hogy úgy tűnik, hogy  _nem lehetséges_ 
+általánosan érvényes, mindenki számára könnyen érthető rendszert
+létrehozni, ahogy ezt az ontológiákra vonatkozó kutatások
+is tanulságként megfogalmazhatják.
+Mert ugye: hová is helyezzük el az  _Elválasztás_  menüpontot?
+
+Könnyebb kérdés: mely csoportba,
+ -mely felsőbb fogalom alá kerüljön a  _kutya_ ?- A válasz kapásból: hát nyilván  _emlős_ .
+Nagy hatással van ránk az egyik fő taxonómia,
+az állat- és növényrendszertan, amit a suliban tanultunk,
+és önkéntelenül azt gondoljuk róla, hogy az ,,igazságot'' tartalmazza.
+
+De ha egy 8-10 éves gyerek keresgél kutyákat,
+akkor rá fog kattintani arra, hogy emlős?
+Vagy arra, hogy  _méhlepényes_  neadjisten  _gerinchúros_ ?
+Még az  _élőlény_  fölött elsiklana talán.
+Ami az igazán releváns csoport számára,
+az valószínűleg az  _állat_ , még ennél is jobbnak tűnik
+az  _aranyos állat_  -- illetve adott esetben a  _félek tőle_  --,
+ha az ontológia készítője volt olyan kedves
+és bevezette ezeket a kategóriákat.
+Azaz a szóban forgó gyerek -- és mindenki más is --
+a saját fogalmi rendszere szerint szeret leginkább keresni.
+
+Azt mondhatjuk, hogy azért nem lehet tökéletes ontológiát csinálni,
+mert az egyes emberek gondolkodási-fogalmi rendszere eltérő.
+Mert mindenki másképp gondolkodik,
+más rendszerben, más összefüggésekkel, más asszociációkkal,
+és nem feltétlenül úgy, ahogy az ontológia építője.
+
+ -Tökéletes ontológiát nem lehet csinálni,-  elég jót azonban
+-- aminek a használata sokaknak kényelmes -- igen.
+Ugyanakkor egy viszonylag rossz ontológiát is meg lehet szokni,
+meg lehet tanulni használni.
+Ennek tudatában talán érdemes lenne a menürendszereket
+nem verzióról verzióra átstruktúrálni
+abban a hitben, hogy mostmár sokkal okosabbak vagyunk mint régen,
+jobb ontológiát tudunk csinálni,
+olyat, ami ,,mostmár tényleg megfelel az emberek gondolkodásának''.
+Úgy tűnik, ebben nem nagyon leszünk sokkal okosabbak.
+
+Kedves olvasó, ha ön éppen a Fővárosi Állat- és Növénykert
+call centerét tervezi, akkor kéretik nem a következő módon eljárni:
+,, _Amennyiben az újszájú állatok iránt érdeklődik, nyomja meg az 1-es gombot, ha viszont a vedlő állatok iránt, akkor a 2-est..._ ''
+

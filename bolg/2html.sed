@@ -1,5 +1,6 @@
-s/ _\([^_]*\)_ / <em>\1<\/em> /g
-s/ =\([^ ][^_]*[^ ]\)= / <em class=\"alert\">\1<\/em> /g
+s/ _\([^_][^_]*\)_ /<em>\1<\/em>/g
+s/ -\([^-][^-]*\)- /<strong>\1<\/strong>/g
+s/ =\([^ ][^_]*[^ ]\)= /<strong class=\"alert\">\1<\/strong>/g
 s/,,/\&bdquo;/g
 s/''/\&rdquo;/g
 s/[~]/\&sim;/g
