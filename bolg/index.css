@@ -45,6 +45,11 @@ a.date {
   text-decoration: none;
 }
 
+a.navig {
+  font-size: 250%;
+  text-decoration: none;
+}
+
 .noalert {
   background: #ffffff;
 }
