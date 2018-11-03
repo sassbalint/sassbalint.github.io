@@ -5,8 +5,13 @@ s/,,/\&bdquo;/g
 s/''/\&rdquo;/g
 s/[~]/\&sim;/g
 s/--/\&ndash;/g
+s/<->/\&harr;/g
 s/->/\&rarr;/g
 s/<-/\&larr;/g
+s/EE/\&euro;/g
+s/xx/\&times;/g
+s/SSSS/\&szlig;/g
+s/[\~][\~]/\&asymp;/g
 s/{\([^}]*\)}:\([^ ]*\)/<a href="\2">\1<\/a>/g
 s/^$/<br style=\"margin-bottom: 0.8em\"\/>/
 s/\(20..\. [^ ]* [0-9]*\.\) \(.*\)/<a name="\1"><\/a><strong style=\"background: #d0d0d0\">\1 \2<\/strong>/
