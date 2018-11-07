@@ -2,12 +2,15 @@
 <html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu-hu" dir="ltr" lang="hu-hu"><head>
 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Pannonia Sacra Katolikus Általános Iskola - Ebéd</title>
+  <title>PaSa Ebéd Kalkulátor</title>
   <style type="text/css">
+        td { 
+            padding: 3px;
+        }
   </style>
 </head>
 
-<body onLoad="g('fam-kcs').checked = true;">
+<body>
 
 <script>
 
@@ -23,7 +26,8 @@ function g( id ) {
 
 function calc() {
   lastname = g('lastname').value;
-
+  localStorage.setItem('lastname', lastname);
+  
   sum = 0;
 
   itemmsg = '';
@@ -45,6 +49,7 @@ function calc() {
   if ( n >= 3 ) { g('fam-ncs').checked = true; }
 
   fam = ( g('fam-ncs').checked ? 'ncs' : 'kcs' );
+  localStorage.setItem('fam', fam);
 
   for (i = 0; i < fields.length; i++) {
     item = fields[i];
@@ -53,6 +58,7 @@ function calc() {
 
     input = g(item).value;
     if ( input.trim() != '' ) {
+      localStorage.setItem(item, input);
       names = input.split(sep);
       for (j = 0; j < names.length; j++) {
         name = names[j].trim();
@@ -67,10 +73,12 @@ function calc() {
         amount = g(codesum).innerHTML;
         sum += Number(amount);
       }
+    }else{
+        localStorage.removeItem(item);
     }
   }
 
-  g('sum').innerHTML = String(sum) + ' Ft';
+  g('sum').value = String(sum);
 
   msg = fam + ', ' + lastname + itemmsg;
 
@@ -88,10 +96,11 @@ function calc() {
 </script>
 
 <p style="text-align: center;"><span style="text-decoration: underline; font-size: 14pt;"><span style="color: #800000; text-decoration: underline;"><strong>Ebédbefizetés 2018. december hónapra</strong></span></span></p>
+<div style="margin:auto; width: 50%;">
 <div style="margin-top: 2em; margin-bottom: 1em">
-vezetéknév: <input type="text" size="15" id="lastname"></input>
+Vezetéknév: <input type="text" size="15" id="lastname"></input>
 </div>
-<table align="center">
+<table>
 <thead>
 <tr>
  <th style="text-align: left;"><span style="font-size: small; color: #800000;">16 napra</span></th>
@@ -101,7 +110,9 @@ vezetéknév: <input type="text" size="15" id="lastname"></input>
  <th colspan="2"><span style="font-size: small;">Nagycsaládos</span><br/>
   <input type="radio" id="fam-ncs" name="fam" value="ncs"></input>
  </th>
- <th><span style="font-size: small;">keresztnév osztály, keresztnév osztály, ...</span> <span style="font-size: 50%">(több gyerek esetén nagyon fontos a vesszővel való elválasztás!)</span></th>
+ <th style="text-align: left; vertical-align: top;">
+     <span style="font-size: small;text-align:left">Keresztnév osztály, keresztnév osztály, ...</span><br> 
+     <span style="font-size: 60%">(több gyerek esetén nagyon fontos a vesszővel való elválasztás!)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -151,11 +162,11 @@ hajrá!
 </div>
 
 <div style="margin-top: 1em">
-fizetendő összeg: <span id="sum" style="font-weight: bold"></span>
+<span>fizetendő összeg: <span><input id="sum" style="width: 60px; font-weight: bold;" readonly onClick="this.setSelectionRange(0, this.value.length)"> Ft
 </div>
 
 <div style="margin-top: 1em">
-banki közlemény: <span id="msg" style="font-weight: bold"></span><br/>
+<span style="vertical-align:top;">banki közlemény: <span><textarea id="msg" style="width: 200px; font-weight: bold" rows="3" readonly onClick="this.setSelectionRange(0, this.value.length)"></textarea><br/>
 <span id="msgmsg" style="font-size: 80%"></span><br/>
 </div>
 
@@ -166,7 +177,30 @@ banki közlemény: <span id="msg" style="font-weight: bold"></span><br/>
 <div style="margin-top: 1em">
 <span style="font-size: 50%">Disclaimer. Használat csak saját felelősségre. :)</span>
 </div>
+</div>
 
+<script>
+    var hajra = false;
+
+    document.getElementById('lastname').value = localStorage.getItem('lastname'); 
+    
+    for (i = 0; i < fields.length; i++) {
+        if(localStorage.getItem(fields[i]) != ''){
+            document.getElementById(fields[i]).value = localStorage.getItem(fields[i]); 
+            hajra = true;
+        }
+    }
+    
+    if(localStorage.getItem('fam') == 'ncs'){
+        g('fam-ncs').checked = true;
+    }else{
+        g('fam-kcs').checked = true;
+    }
+    
+    if(hajra){
+        calc();
+    }
+</script>
 
 <!--
 
@@ -180,7 +214,11 @@ TODO
    1. csökkentsük a keresztneveket 5, 4, 3, 2, 1 karakterre :)
    2. tüntessük el a szóközt - talán ez mégse jó, szóval utóbb!
  + 2018.09.21. ha min. 3 input van, akkor mindenképp legyen ncs!
-
+ + 2018.11.05. Eredmények kerüljenek mezőbe, amelyek nem írhatóak, belekattintva kiválasztódik a teljes tartalma
+ + 2018.11.06. Csinosítás, Title módosítás
+ + 2018.11.05. Local storage-be kerüljenek be a mezők, betöltéskor pedig töltődjenek be a mezők és kerüljön megnyomásra a gomb, ha van érték
+ - 2018.11.06. Mobile-friendly interface
+ - 2018.11.06. Adatokat egyszerű módon lehessen felvinni, pl. egy külön textfájlba, vagy egy .js fájlba (akár automata is lehetne a PaSa honlapjáról...)
 -->
 
 <!--div style="margin-top: 1em">
