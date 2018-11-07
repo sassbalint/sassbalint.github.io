@@ -2,7 +2,10 @@
 <html slick-uniqueid="3" xmlns="http://www.w3.org/1999/xhtml" xml:lang="hu-hu" dir="ltr" lang="hu-hu"><head>
 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>PaSa Ebéd Kalkulátor</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PaSa ebéd kalkulátor</title>
   <style type="text/css">
         td { 
             padding: 3px;
@@ -98,55 +101,55 @@ function calc() {
 <p style="text-align: center;"><span style="text-decoration: underline; font-size: 14pt;"><span style="color: #800000; text-decoration: underline;"><strong>Ebédbefizetés 2018. december hónapra</strong></span></span></p>
 <div style="margin:auto; width: 50%;">
 <div style="margin-top: 2em; margin-bottom: 1em">
-Vezetéknév: <input type="text" size="15" id="lastname"></input>
+vezetéknév: <input type="text" size="15" id="lastname"></input>
 </div>
 <table>
 <thead>
 <tr>
  <th style="text-align: left;"><span style="font-size: small; color: #800000;">16 napra</span></th>
- <th colspan="2"><span style="font-size: small;">Kiscsaládos</span><br/>
+ <th colspan="2"><span style="font-size: small;">kiscsaládos</span><br/>
   <input type="radio" id="fam-kcs" name="fam" value="kcs"></input>
  </th>
- <th colspan="2"><span style="font-size: small;">Nagycsaládos</span><br/>
+ <th colspan="2"><span style="font-size: small;">nagycsaládos</span><br/>
   <input type="radio" id="fam-ncs" name="fam" value="ncs"></input>
  </th>
  <th style="text-align: left; vertical-align: top;">
-     <span style="font-size: small;text-align:left">Keresztnév osztály, keresztnév osztály, ...</span><br> 
+     <span style="font-size: small;text-align:left">keresztnév osztály, keresztnév osztály, ...</span><br/> 
      <span style="font-size: 60%">(több gyerek esetén nagyon fontos a vesszővel való elválasztás!)</span></th>
 </tr>
 </thead>
 <tbody>
 
 <tr>
-<td>Ebéd</td>
+<td>ebéd</td>
 <td style="text-align: right;" id="e-kcs-o">7680</td><td>Ft</td>
 <td style="text-align: right;" id="e-ncs-o">3840</td><td>Ft</td>
  <td><input type="text" size="15" id="e"></input></td>
 </tr>
 
 <tr>
-<td>Napközi (reggeli, ebéd, uzsonna)</td>
+<td>napközi (reggeli, ebéd, uzsonna)</td>
 <td style="text-align: right;" id="nk-kcs-o">10080</td><td>Ft</td>
 <td style="text-align: right;" id="nk-ncs-o">5040</td><td>Ft</td>
  <td><input type="text" size="15" id="nk"></input></td>
 </tr>
 
 <tr>
-<td>Reggeli és ebéd</td>
+<td>reggeli és ebéd</td>
 <td style="text-align: right;" id="re-kcs-o">8960</td><td>Ft</td>
 <td style="text-align: right;" id="re-ncs-o">4480</td><td>Ft</td>
  <td><input type="text" size="15" id="re"></input></td>
 </tr>
 
 <tr>
-<td>Ebéd és uzsonna</td>
+<td>ebéd és uzsonna</td>
 <td style="text-align: right;" id="eu-kcs-o">8960</td><td>Ft</td>
 <td style="text-align: right;" id="eu-ncs-o">4480</td><td>Ft</td>
  <td><input type="text" size="15" id="eu"></input></td>
 </tr>
 
 <tr>
-<td>Diétás ebéd</td>
+<td>diétás ebéd</td>
 <td style="text-align: right;" id="d-kcs-o">20160</td><td>Ft</td>
 <td style="text-align: right;" id="d-ncs-o">10080</td><td>Ft</td>
  <td><input type="text" size="15" id="d"></input></td>
@@ -162,11 +165,11 @@ hajrá!
 </div>
 
 <div style="margin-top: 1em">
-<span>fizetendő összeg: <span><input id="sum" style="width: 60px; font-weight: bold;" readonly onClick="this.setSelectionRange(0, this.value.length)"> Ft
+fizetendő összeg: <input id="sum" style="width: 60px; font-weight: bold;" readonly onClick="this.setSelectionRange(0, this.value.length)"> Ft
 </div>
 
 <div style="margin-top: 1em">
-<span style="vertical-align:top;">banki közlemény: <span><textarea id="msg" style="width: 200px; font-weight: bold" rows="3" readonly onClick="this.setSelectionRange(0, this.value.length)"></textarea><br/>
+banki közlemény: <input id="msg" style="width: 400px; font-weight: bold" readonly onClick="this.setSelectionRange(0, this.value.length)"><br/>
 <span id="msgmsg" style="font-size: 80%"></span><br/>
 </div>
 
@@ -175,7 +178,9 @@ hajrá!
 </div>
 
 <div style="margin-top: 1em">
-<span style="font-size: 50%">Disclaimer. Használat csak saját felelősségre. :)</span>
+<span style="font-size: 50%">&copy; Sass Bálint és Bodnár Lajos
+&ndash; v2.0 2018.11.07.<br/>
+Disclaimer. Használat csak saját felelősségre. :)</span>
 </div>
 </div>
 
@@ -213,12 +218,15 @@ TODO
    akkor írjunk ki üzenetet! :)
    1. csökkentsük a keresztneveket 5, 4, 3, 2, 1 karakterre :)
    2. tüntessük el a szóközt - talán ez mégse jó, szóval utóbb!
+ - 2018.11.06. Adatokat egyszerű módon lehessen felvinni, pl. egy külön textfájlba, vagy egy .js fájlba (akár automata is lehetne a PaSa honlapjáról...)
+               sztem 1 db adat van: a napok száma, abból számolandó minden :)
+
  + 2018.09.21. ha min. 3 input van, akkor mindenképp legyen ncs!
  + 2018.11.05. Eredmények kerüljenek mezőbe, amelyek nem írhatóak, belekattintva kiválasztódik a teljes tartalma
  + 2018.11.06. Csinosítás, Title módosítás
  + 2018.11.05. Local storage-be kerüljenek be a mezők, betöltéskor pedig töltődjenek be a mezők és kerüljön megnyomásra a gomb, ha van érték
- - 2018.11.06. Mobile-friendly interface
- - 2018.11.06. Adatokat egyszerű módon lehessen felvinni, pl. egy külön textfájlba, vagy egy .js fájlba (akár automata is lehetne a PaSa honlapjáról...)
+ + 2018.11.07. Mobile-friendly interface - ez akkor megvan, ugye?
+
 -->
 
 <!--div style="margin-top: 1em">
