@@ -19,5 +19,5 @@ s/^\(20..\. [^ ]* [0-9]*\.\) \(.*\)/<a name="\1"><\/a><strong style=\"background
 s/BIB{\([^}]*\)}{\([^}]*\)}{\([^}]*\)}/<a target="_blank" href="http:\/\/szentiras.hu\/SZIT\/\1\2,\3">\1 \2,\3<\/a>/g
 s/REF{\([^}]*\)}/(vö: <a class="date" href="#\1">\1<\/a>)/g
 
-s|LNAV{\([^}]*\)}|<a class="navig" href="https://sassbalint.github.io/\1">\&larr;</a>|
-s|RNAV{\([^}]*\)}|<a class="navig" href="https://sassbalint.github.io/\1">\&rarr;</a>|
+s|LNAV{\([^}]*\)}{\([^}]*\)}|<a class="navig" href="https://sassbalint.github.io/\1">\&larr; előző: \2</a>|
+s|RNAV{\([^}]*\)}{\([^}]*\)}|<a class="navig" href="https://sassbalint.github.io/\1">következő: \2 \&rarr;</a>|
