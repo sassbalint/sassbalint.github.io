@@ -13,11 +13,13 @@ RNAV{}{}
 
 Régóta foglalkozom nagy méretű szöveggyűjteményekben,
 szövegkorpuszokban való nyelvészeti szempontú kereséssel.
+<br/>
 [Részt vettem](http://www.nytud.hu/oszt/korpusz/Sass_Balint.html)
 több korpusz illetve korpuszlekérdező felület kialakításában.
-
+<br/>
 Az elmúlt években többször, több formában tartottam
 korpuszban való keresésről szóló kurzust.
+<br/>
 6&times;90 perces időkerettel számolva
 a kikristályosodott tematika a közvetkező:
 
@@ -30,18 +32,16 @@ Korpusz, token, annotáció, metaadat.
 Szűrés és gyakorisági lista.
 Reguláris kifejezések.
 </li>
-
 <li>
 Corpus Query Language (CQL).
 A tanultakat alkalmazó összetett példalekérdezés.
-
+</li>
 <li>
 További példák.
 Elemzett korpusz: 
 [Magyar Nemzeti Szövegtár](http://clara.nytud.hu/mnsz-dev).
 Attribútumok, részletes keresés (magyar morfológia és fonológia).
 </li>
-
 <li>
 ,,Automatikus'' versírás.
 [Mazsola](http://corpus.nytud.hu/mazsola) korpuszlekérdező:
@@ -50,12 +50,10 @@ igék és bővítmények vizsgálata.
 A [Budapesti Szociolingvisztikai Interjú (BUSZI)](http://corpus.nytud.hu/buszi)
 lejegyzett anyagának korpusza.
 </li>
-
 <li>
 A korpuszkeresés elvei.
 Az MNSZ2 logból származó valódi lekérdezések elemzése.
 </li>
-
 <li>
 Feladatok és megoldások megbeszélése.
 </li>
@@ -64,17 +62,18 @@ Feladatok és megoldások megbeszélése.
 A kurzus alapos tudásanyagot nyújt
 a korpuszalapú és korpuszvezérelt nyelvészeti kutatás
 módszereiről és átfogó gyakorlati eszközöket ad a hallgatóság kezébe.
-
+<br/>
 Igény esetén szívesen vállalom a fenti kurzus megtartását.
 Díjazás: megbeszélés szerint, de kb. 15000 Ft / 90 perc.
+<br/>
 Célközönség:
 magyar, elméleti nyelvészet, alkalmazott nyelvészet
 és más hasonló szakosok (harmadévtől PhD-ig).
-
+<br/>
 Előfeltétel: legalább középfokú magyar nyelvtudás,
 alapvető általános és magyar nyelvészeti tájékozottság.
 
-Kontakt: @sass.balint kukac nytud.mta.hu@
+Kontakt: @sass.balint kukac nytud.mta.hu@ 
 
 Referenciák:
 <ul>
@@ -92,22 +91,22 @@ Referenciák:
 # képek: http://www.jgypk.u-szeged.hu/hirek/szte-jgypk-2018-oktober/beszed-nyelvelemzo-181024-1?objectParentFolderId=31796
 </li>
 <li>
- ELTE BTK, MA/PhD, Számítógépes nyelvészet óra keretében
+ ELTE BTK, MA/PhD, Számítógépes nyelvészet tárgy keretében
  -- 2018. május (1&times;90 percben)
 # Eszter és Iván
 </li>
 <li>
- PPKE ITK, MSc, Nyelvtechnológia óra keretében
+ PPKE ITK, MSc, Nyelvtechnológia tárgy keretében
  -- 2018. május (1&times;90 percben)
 # Prószéky Gábor
 </li>
 <li>
- ELTE BTK, PhD / Alkalmazott nyelvészet, Kutatásmódszertan óra keretében
+ ELTE BTK, PhD / Alkalmazott nyelvészet, Kutatásmódszertan tárgy keretében
  -- 2018. tavasz (2&times;90 percben)
 # Deme Andi
 </li>
 <li>
- ELTE BTK, PhD / Magyar nyelvészet, Kutatásmódszertan óra keretében
+ ELTE BTK, PhD / Magyar nyelvészet, Kutatásmódszertan tárgy keretében
  -- 2018. február (2&times;90 percben)
 # Kugler Nóra
 </li>
@@ -117,12 +116,12 @@ Referenciák:
 # én...
 </li>
 <li>
- PPKE ITK, MSc, Nyelvtechnológia óra keretében
+ PPKE ITK, MSc, Nyelvtechnológia tárgy keretében
  -- 2016. május (1&times;90 percben)
 # Prószéky Gábor
 </li>
 <li>
- ELTE BTK, MA, Korpusznyelvészet óra keretében
+ ELTE BTK, MA, Korpusznyelvészet tárgy keretében
  -- 2016. április (1&times;90 percben)
 # Tóth Etelka
 </li>
