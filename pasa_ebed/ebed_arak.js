@@ -4,6 +4,8 @@ ar['ncs'] = new Array();
 
 /* Hónapról hónapra ez frissítendő: */
 /* Január: */
+var evho = '2018. január';
+
 ar['kcs']['e']  = 10080;
 ar['kcs']['nk'] = 13230;
 ar['kcs']['re'] = 11760;
@@ -20,6 +22,7 @@ ar['ncs']['d']  = ar['kcs']['d']/2;
 
 function arak_feltolt()
 {
+    document.getElementById('evho').innerHTML = evho;
     for (i = 0; i < fields.length; i++) {
         document.getElementById(fields[i] + '-kcs-o').innerHTML = ar['kcs'][fields[i]];
         document.getElementById(fields[i] + '-ncs-o').innerHTML = ar['ncs'][fields[i]];
