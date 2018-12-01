@@ -9,6 +9,8 @@ RNAV{}{}
 <br/>
 2018. december 1. --  _Keresés korpuszban_  kurzus
 
+<img width="100%" style="margin: 1em" alt="Friss kép a Kosciról" src="sass-balint-cql.jpg"/>
+
 Régóta foglalkozom szövegkorpuszokban való kereséssel.
 Több korpusz illetve korpuszlekérdező felület kialakításában
 [részt vettem](http://www.nytud.hu/oszt/korpusz/Sass_Balint.html).
@@ -35,7 +37,7 @@ A tanultakat alkalmazó összetett példalekérdezés.
 -- 3.
 További példák.
 Elemzett korpusz: 
-[Magyar Nemzeti Szövegtár](http://mnsz.nytud.hu).
+[Magyar Nemzeti Szövegtár](http://clara.nytud.hu/mnsz-dev).
 Attribútumok, részletes keresés (magyar morfológia és fonológia).
 
 -- 4.
@@ -51,47 +53,16 @@ A korpuszkeresés elvei.
 Az MNSZ2 logból származó valódi lekérdezések elemzése.
 
 -- 6.
-Feladatok megoldásainak megbeszélése
+Feladatok és megoldások megbeszélése.
 </div>
 
 A kurzus alapos tudásanyagot ad
 a korpuszalapú és korpuszvezérelt nyelvészeti kutatás
 módszereiről és átfogó gyakorlati eszközöket ad a hallgatóság kezébe.
 
-Referenciák:
- * Varsói Egyetem, BA, magyar szak,
-   [önálló kurzus](http://www.hungarystyka.uw.edu.pl/index.php/component/content/article/17-aktualnoci/850-polskie-i-wgierskie-korpusy-jzykowe) 
-   -- 2018. november (6 &times; 90 percben)
-# Anna Grzeszak
- * SZTE JGYPK, Szeged,
-   [,,Beszéd- és nyelvelemző szoftverek...'' workshop](http://www.jgypk.u-szeged.hu/hirek/szte-jgypk-2018-oktober/beszed-nyelvelemzo)
-   -- 2018. október (1 &times; 45 percben)
-# Erdei Tamás
-# képek: http://www.jgypk.u-szeged.hu/hirek/szte-jgypk-2018-oktober/beszed-nyelvelemzo-181024-1?objectParentFolderId=31796
- * ELTE BTK, MA/PhD, Számítógépes nyelvészet óra keretében
-   -- 2018. május (1 &times; 90 percben)
- * PPKE ITK, MSc, Nyelvtechnológia óra keretében
-   -- 2018. május (1 &times; 90 percben)
- * ELTE BTK, PhD (Alkalmazott nyelvészet)
-# Deme Andi
-   -- 2018. tavasz (2 &times; 90 percben)
- * ELTE BTK, PhD (Magyar nyelvészet)
-# Kugler Nóra
-   -- 2018. február (2 &times; 90 percben)
- * MTA NYTI (munkatársaknak)
-   -- 2016. június (1 &times; 90 percben)
- * PPKE ITK, MSc, Nyelvtechnológia óra keretében
-   -- 2016. május (1 &times; 90 percben)
-# Prószéky Gábor
- * ELTE BTK, MA, Korpusznyelvészet óra keretében
-   -- 2016. április (1 &times; 90 percben)
-# Tóth Etelka
-
-Az említett korpuszok elérhetők a
-[Nemzeti Korpuszportálról](http://corpus.nytud.hu/nkp).
-
-Igény esetén vállalom a fenti kurzus megtartását.
-Potenciális közönség:
+Igény esetén szívesen vállalom a fenti kurzus megtartását.
+Díjazás: 15000 Ft / 90 perc.
+Célközönség:
 magyar, elméleti nyelvészet, alkalmazott nyelvészet
 és más hasonló szakosok (harmadévtől PhD-ig).
 
@@ -100,3 +71,57 @@ alapvető általános és magyar nyelvészeti tájékozottság.
 
 Kontakt: [Sass Bálint](mailto:sass.balint kukac nytud.mta.hu)
 
+Referenciák:
+<ul>
+<li>
+ Varsói Egyetem, BA, magyar szak,
+ [önálló kurzus](http://www.hungarystyka.uw.edu.pl/index.php/component/content/article/17-aktualnoci/850-polskie-i-wgierskie-korpusy-jzykowe) 
+ -- 2018. november (6 &times; 90 percben)
+# Anna Grzeszak
+</li>
+<li>
+ SZTE JGYPK, Szeged,
+ [,,Beszéd- és nyelvelemző szoftverek...'' workshop](http://www.jgypk.u-szeged.hu/hirek/szte-jgypk-2018-oktober/beszed-nyelvelemzo)
+ -- 2018. október (1 &times; 45 percben)
+# Erdei Tamás
+# képek: http://www.jgypk.u-szeged.hu/hirek/szte-jgypk-2018-oktober/beszed-nyelvelemzo-181024-1?objectParentFolderId=31796
+</li>
+<li>
+ * ELTE BTK, MA/PhD, Számítógépes nyelvészet óra keretében
+   -- 2018. május (1 &times; 90 percben)
+# Eszter és Iván
+</li>
+<li>
+ * PPKE ITK, MSc, Nyelvtechnológia óra keretében
+   -- 2018. május (1 &times; 90 percben)
+# Prószéky Gábor
+</li>
+<li>
+ * ELTE BTK, PhD / Alkalmazott nyelvészet, Kutatásmódszertan óra keretében
+   -- 2018. tavasz (2 &times; 90 percben)
+# Deme Andi
+</li>
+<li>
+ * ELTE BTK, PhD / Magyar nyelvészet, Kutatásmódszertan óra keretében
+   -- 2018. február (2 &times; 90 percben)
+# Kugler Nóra
+</li>
+<li>
+ * MTA NYTI, az intézet munkatársai számára
+   -- 2016. június (1 &times; 90 percben)
+# én...
+</li>
+<li>
+ * PPKE ITK, MSc, Nyelvtechnológia óra keretében
+   -- 2016. május (1 &times; 90 percben)
+# Prószéky Gábor
+</li>
+<li>
+ * ELTE BTK, MA, Korpusznyelvészet óra keretében
+   -- 2016. április (1 &times; 90 percben)
+# Tóth Etelka
+</li>
+</ul>
+
+Az említett korpuszok elérhetők a
+[Nemzeti Korpuszportálról](http://corpus.nytud.hu/nkp).
