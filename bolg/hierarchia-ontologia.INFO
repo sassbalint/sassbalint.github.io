@@ -1,9 +1,10 @@
 
-LNAV{}
-RNAV{bolg/kosci.html}
-
-<em>,,Bolgok, akik programoznak, mert teremtenek valamit, ami egyszercsak életre kel és működik.''</em>
+<em>,,Bolgok, akik programoznak, mert teremtenek valamit,
+ami egyszercsak életre kel és működik.''</em>
 BIB{Mt}{5}{1-10}
+
+LNAV{}{} |
+RNAV{bolg/kosci.html}{Kosci}
 
 <br/>
 2018. október 10. -- hierarchikus menü és ontológia
