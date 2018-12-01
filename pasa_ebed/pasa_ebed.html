@@ -23,12 +23,13 @@
             }
         }
   </style>
+  <script src="ebed_arak.js"></script>
 </head>
 
 <body>
 
 <script>
-
+console.log(ar);
 var fields = [ 'e', 'nk', 're', 'eu', 'd' ];
 
 var sep = ',';
@@ -60,7 +61,7 @@ function calc() {
     if ( input.trim() != '' ) {
       n += input.split(sep).length;
     }
-  }
+  }console.log(fields);
   if ( n >= 3 ) { g('fam-ncs').checked = true; }
 
   fam = ( g('fam-ncs').checked ? 'ncs' : 'kcs' );
@@ -200,6 +201,8 @@ Disclaimer. Használat csak saját felelősségre. :)</span>
 </div>
 
 <script>
+    arak_feltolt();
+    
     var hajra = false;
 
     document.getElementById('lastname').value = localStorage.getItem('lastname'); 
