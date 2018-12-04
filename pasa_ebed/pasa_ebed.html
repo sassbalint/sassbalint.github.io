@@ -23,7 +23,7 @@
             }
         }
   </style>
-  <script src="ebed_arak.js"></script>
+  <script src="pasa_ebed_config.js"></script>
 </head>
 
 <body>
@@ -122,7 +122,7 @@ vezetéknév: <input type="text" size="15" id="lastname"></input>
 <table style="">
 <thead>
 <tr>
- <th style="text-align: left;"><span style="font-size: small; color: #800000;">16 napra</span></th>
+ <th style="text-align: left;"><span style="font-size: small; color: #800000;"><span id="napokszama">napok száma</span> napra</span></th>
  <th colspan="2"><span style="font-size: small;">kis&#8203;családos</span><br/>
   <input type="radio" id="fam-kcs" name="fam" value="kcs"></input>
  </th>
@@ -138,36 +138,36 @@ vezetéknév: <input type="text" size="15" id="lastname"></input>
 
 <tr>
 <td>ebéd</td>
-<td style="text-align: right;" id="e-kcs-o">7680</td><td>Ft</td>
-<td style="text-align: right;" id="e-ncs-o">3840</td><td>Ft</td>
+<td style="text-align: right;" id="e-kcs-o"></td><td>Ft</td>
+<td style="text-align: right;" id="e-ncs-o"></td><td>Ft</td>
  <td><input type="text" size="15" id="e"></input></td>
 </tr>
 
 <tr>
 <td>napközi (reggeli, ebéd, uzsonna)</td>
-<td style="text-align: right;" id="nk-kcs-o">10080</td><td>Ft</td>
-<td style="text-align: right;" id="nk-ncs-o">5040</td><td>Ft</td>
+<td style="text-align: right;" id="nk-kcs-o"></td><td>Ft</td>
+<td style="text-align: right;" id="nk-ncs-o"></td><td>Ft</td>
  <td><input type="text" size="15" id="nk"></input></td>
 </tr>
 
 <tr>
 <td>reggeli és ebéd</td>
-<td style="text-align: right;" id="re-kcs-o">8960</td><td>Ft</td>
-<td style="text-align: right;" id="re-ncs-o">4480</td><td>Ft</td>
+<td style="text-align: right;" id="re-kcs-o"></td><td>Ft</td>
+<td style="text-align: right;" id="re-ncs-o"></td><td>Ft</td>
  <td><input type="text" size="15" id="re"></input></td>
 </tr>
 
 <tr>
 <td>ebéd és uzsonna</td>
-<td style="text-align: right;" id="eu-kcs-o">8960</td><td>Ft</td>
-<td style="text-align: right;" id="eu-ncs-o">4480</td><td>Ft</td>
+<td style="text-align: right;" id="eu-kcs-o"></td><td>Ft</td>
+<td style="text-align: right;" id="eu-ncs-o"></td><td>Ft</td>
  <td><input type="text" size="15" id="eu"></input></td>
 </tr>
 
 <tr>
 <td>diétás ebéd</td>
-<td style="text-align: right;" id="d-kcs-o">20160</td><td>Ft</td>
-<td style="text-align: right;" id="d-ncs-o">10080</td><td>Ft</td>
+<td style="text-align: right;" id="d-kcs-o"></td><td>Ft</td>
+<td style="text-align: right;" id="d-ncs-o"></td><td>Ft</td>
  <td><input type="text" size="15" id="d"></input></td>
 </tr>
 
@@ -195,7 +195,7 @@ banki közlemény: <input id="msg" style="width: 400px; font-weight: bold" reado
 
 <div style="margin-top: 1em">
 <span style="font-size: 50%">&copy; Sass Bálint és Bodnár Lajos
-&ndash; v2.0 2018.11.07.<br/>
+&ndash; v2.1 2018.12.04.<br/>
 Disclaimer. Használat csak saját felelősségre. :)</span>
 </div>
 </div>
