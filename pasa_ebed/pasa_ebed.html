@@ -10,13 +10,26 @@
         td { 
             padding: 3px;
         }
+        .form_body {
+            margin:auto; width: 50%; min-width:440px;
+        }
+        @media only screen and (max-width: 440px) { /* For mobile phones: */
+            .form_body {
+                width: 100%;
+                min-width: 0px;
+            }
+            td {
+                font-size: small;
+            }
+        }
   </style>
+  <script src="ebed_arak.js"></script>
 </head>
 
 <body>
 
 <script>
-
+console.log(ar);
 var fields = [ 'e', 'nk', 're', 'eu', 'd' ];
 
 var sep = ',';
@@ -48,7 +61,7 @@ function calc() {
     if ( input.trim() != '' ) {
       n += input.split(sep).length;
     }
-  }
+  }console.log(fields);
   if ( n >= 3 ) { g('fam-ncs').checked = true; }
 
   fam = ( g('fam-ncs').checked ? 'ncs' : 'kcs' );
@@ -69,7 +82,7 @@ function calc() {
         if ( first ) {
           first = false;
         } else {
-          itemmsg += ', ';
+          itemmsg += ',';
         }
         itemmsg += ' ' + name + ' ' + item;
 
@@ -80,37 +93,40 @@ function calc() {
         localStorage.removeItem(item);
     }
   }
+  
+  if(sum>0){
 
-  g('sum').value = String(sum);
+    g('sum').value = String(sum);
 
-  msg = fam + ', ' + lastname + itemmsg;
+    msg = fam + ', ' + lastname + itemmsg;
 
-  g('msg').value = msg;
+    g('msg').value = msg;
 
-  if ( msg.length > maxmsg ) {
-    g('msgmsg').innerHTML =
-      '(ez ' + msg.length + ' karakter! - az OTP-nél max. ' + maxmsg + ' karakter lehet)';
-  } else {
-    g('msgmsg').innerHTML = '';
+    if ( msg.length > maxmsg ) {
+      g('msgmsg').innerHTML =
+        '(ez ' + msg.length + ' karakter! - az OTP-nél max. ' + maxmsg + ' karakter lehet)';
+    } else {
+      g('msgmsg').innerHTML = '';
+    }
   }
 
 }
 
 </script>
 
-<p style="text-align: center;"><span style="text-decoration: underline; font-size: 14pt;"><span style="color: #800000; text-decoration: underline;"><strong>Ebédbefizetés 2018. december hónapra</strong></span></span></p>
-<div style="margin:auto; width: 50%;">
+<p style="text-align: center;"><span style="text-decoration: underline; font-size: 14pt;"><span style="color: #800000; text-decoration: underline;"><strong>Ebédbefizetés <span id="evho">év. hó</span> hónapra</strong></span></span></p>
+<div class="form_body">
 <div style="margin-top: 2em; margin-bottom: 1em">
 vezetéknév: <input type="text" size="15" id="lastname"></input>
 </div>
-<table>
+<table style="">
 <thead>
 <tr>
  <th style="text-align: left;"><span style="font-size: small; color: #800000;">16 napra</span></th>
- <th colspan="2"><span style="font-size: small;">kiscsaládos</span><br/>
+ <th colspan="2"><span style="font-size: small;">kis&#8203;családos</span><br/>
   <input type="radio" id="fam-kcs" name="fam" value="kcs"></input>
  </th>
- <th colspan="2"><span style="font-size: small;">nagycsaládos</span><br/>
+ <th colspan="2"><span style="font-size: small;">nagy&#8203;családos</span><br/>
   <input type="radio" id="fam-ncs" name="fam" value="ncs"></input>
  </th>
  <th style="text-align: left; vertical-align: top;">
@@ -185,15 +201,17 @@ Disclaimer. Használat csak saját felelősségre. :)</span>
 </div>
 
 <script>
+    arak_feltolt();
+    
     var hajra = false;
 
     document.getElementById('lastname').value = localStorage.getItem('lastname'); 
     
     for (i = 0; i < fields.length; i++) {
-        if(localStorage.getItem(fields[i]) != ''){
+        if(localStorage.getItem(fields[i]) != null){
             document.getElementById(fields[i]).value = localStorage.getItem(fields[i]); 
             hajra = true;
-        }
+        } 
     }
     
     if(localStorage.getItem('fam') == 'ncs'){
