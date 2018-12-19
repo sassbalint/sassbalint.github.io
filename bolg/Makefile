@@ -3,6 +3,10 @@ all: htmls
 
 htmls: jani-szamsora/index.html bipol.html kozep-europa-hazam.html kereses-korpuszban.html sass-balint.html linz-szex.html linz.html kosci.html hierarchia-ontologia.html
 
-%.html: %.INFO 2html.sed
-	X=`cat $< | grep -m 1 "[-]-" | sed "s/--.*//"` ; ( cat header | incl fb-code ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer | sed "s/XXXDATUM/$$X/" ) > $@
+jani-szamsora/index.html: jani-szamsora/index.INFO 2html.sed header fb-code footer jani-szamsora/data2html.sh jani-szamsora/jani-szamsora.500
+	cd jani-szamsora ; make
+	( cat header | incl fb-code ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
+
+%.html: %.INFO 2html.sed header fb-code footer
+	( cat header | incl fb-code ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
 
