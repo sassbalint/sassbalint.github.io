@@ -1,5 +1,5 @@
 
-DATA=jani-szamsora.500
+DATA=data
 
 all: file
 
