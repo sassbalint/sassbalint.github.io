@@ -1,8 +1,8 @@
 // <HONAPROL_HONAPRA_FRISSITENDO>
 //  * aktuális év és hónap szöveggel
-var evho = '2019. március';
+var evho = '2019. április';
 //  * napok száma az aktuális hónapban
-var napokszama = 19;
+var napokszama = 15;
 // </HONAPROL_HONAPRA_FRISSITENDO>
 
 var ar = new Array();
