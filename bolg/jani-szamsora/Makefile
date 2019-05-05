@@ -3,7 +3,7 @@ DATA=data
 
 all: file
 
-file: jani-szamsora.INFO
+file: bevez.INFO jani-szamsora.INFO
 	cat bevez.INFO jani-szamsora.INFO > index.INFO
 
 jani-szamsora.INFO: data2html.sh $(DATA)

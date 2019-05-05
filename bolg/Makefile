@@ -1,7 +1,7 @@
 
 all: htmls
 
-htmls: jani-szamsora/index.html bipol.html kozep-europa-hazam.html kereses-korpuszban.html sass-balint.html linz-szex.html linz.html kosci.html hierarchia-ontologia.html
+htmls: isten-vetuletei.html jani-szamsora/index.html bipol.html kozep-europa-hazam.html kereses-korpuszban.html sass-balint.html linz-szex.html linz.html kosci.html hierarchia-ontologia.html
 
 jani-szamsora/index.html: jani-szamsora/index.INFO 2html.sed header fb-code footer jani-szamsora/data2html.sh jani-szamsora/data
 	cd jani-szamsora ; make
