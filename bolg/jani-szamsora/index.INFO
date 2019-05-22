@@ -23,6 +23,8 @@ Fent grafikonon ábrázoltam
 1-től 500-ig az egyes számokhoz rendelt eredményt.
 Lent az adatok láthatók 1-től 1200-ig,
 ez [le is tölthető](data.csv), ha úgy jobb.
+ -update-  (2019. május 22.):
+Vagy alább lekérdezhetjük az értéket tetszőleges számra, ha úgy még jobb.
 
 <CALCUI/>
 
@@ -30,8 +32,10 @@ Ránézésre egyrészt mintha lenne benne valamiféle rendszer,
 másrészt viszont szinte nincs két teljesen egyforma részlet,
 azaz hát elég nagy az összevisszaság.
 
-Akinek sikerült kitalálnia (mondjuk meg tudja mondani
-a 2001-2050-ig terjedő számokra az eredményt), szóljon!
+Akinek sikerült kitalálnia
+<span style="text-decoration: line-through">(mondjuk meg tudja mondani
+a 2001-2050-ig terjedő számokra az eredményt)</span>,
+azaz meg tudja mondani a szabályt, ami minden számra működik, szóljon!
 Jáni azt mondja, hogy az első kitalálónak
 ad  =500 forintot= , hát nem tudom...
 

@@ -24,7 +24,7 @@ function call_microservice( n, callback ) {
     callback( n ); return;
   }
 
-  g("res").innerHTML = '<span style="font-size: 80%">&hellip;</span>';
+  g("res").innerHTML = '&hellip;';
   x.onreadystatechanged = function() {
     if ( x.readyState == 4 && x.status == 200 ) {
       console.log( ":) do callback: " + x.responseText )
@@ -49,8 +49,7 @@ function call_microservice( n, callback ) {
 
 function display_result( s ) {
   console.log( "display_result() start" );
-  g("res").innerHTML =
-    '<span id="res" style="text-weight: bold">' + s + '</span>';
+  g("res").innerHTML = s
 }
   
   </script>
@@ -96,17 +95,21 @@ Fent grafikonon ábrázoltam
 1-től 500-ig az egyes számokhoz rendelt eredményt.
 Lent az adatok láthatók 1-től 1200-ig,
 ez <a href="data.csv">le is tölthető</a>, ha úgy jobb.
+<strong>update</strong> (2019. május 22.):
+Vagy alább lekérdezhetjük az értéket tetszőleges számra, ha úgy még jobb.
 <br style="margin-bottom: 0.8em"/>
 <input type="text" id="n" size="10"/> &rarr;
-<span id="res">??</span>
+<span id="res" style="text-weight: bold">??</span>
 <button onclick="call_microservice( g('n').value, display_result )">Namennyi?</button>
 <br style="margin-bottom: 0.8em"/>
 Ránézésre egyrészt mintha lenne benne valamiféle rendszer,
 másrészt viszont szinte nincs két teljesen egyforma részlet,
 azaz hát elég nagy az összevisszaság.
 <br style="margin-bottom: 0.8em"/>
-Akinek sikerült kitalálnia (mondjuk meg tudja mondani
-a 2001-2050-ig terjedő számokra az eredményt), szóljon!
+Akinek sikerült kitalálnia
+<span style="text-decoration: line-through">(mondjuk meg tudja mondani
+a 2001-2050-ig terjedő számokra az eredményt)</span>,
+azaz meg tudja mondani a szabályt, ami minden számra működik, szóljon!
 Jáni azt mondja, hogy az első kitalálónak
 ad <strong class="alert">500 forintot</strong>, hát nem tudom...
 <br style="margin-bottom: 0.8em"/>

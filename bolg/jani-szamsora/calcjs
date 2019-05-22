@@ -17,7 +17,7 @@ function call_microservice( n, callback ) {
     callback( n ); return;
   }
 
-  g("res").innerHTML = '<span style="font-size: 80%">&hellip;</span>';
+  g("res").innerHTML = '&hellip;';
   x.onreadystatechanged = function() {
     if ( x.readyState == 4 && x.status == 200 ) {
       console.log( ":) do callback: " + x.responseText )
@@ -42,8 +42,7 @@ function call_microservice( n, callback ) {
 
 function display_result( s ) {
   console.log( "display_result() start" );
-  g("res").innerHTML =
-    '<span id="res" style="text-weight: bold">' + s + '</span>';
+  g("res").innerHTML = s
 }
   
   </script>
