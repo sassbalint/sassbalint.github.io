@@ -5,6 +5,56 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>sassbalint.github.io BOLG</title>
   <link rel="stylesheet" href="index.css" type="text/css">
+  <script>
+
+function g( id ) {
+  return document.getElementById( id );
+}
+
+function call_microservice( n, callback ) {
+  console.log( "call_microservice() start" );
+  var x = new XMLHttpRequest();
+
+  n = Math.round(parseFloat( n ));
+
+  // 0 esetén nem kell a heroku-t hívni... :)
+  if ( n <= 0 || isNaN( n ) ) {
+    n = 0;
+    g("n").value = n;
+    callback( n ); return;
+  }
+
+  g("res").innerHTML = '<span style="font-size: 80%">&hellip;</span>';
+  x.onreadystatechanged = function() {
+    if ( x.readyState == 4 && x.status == 200 ) {
+      console.log( ":) do callback: " + x.responseText )
+      callback( x.responseText )
+      // XXX ez vajon miért nem működik,
+      // XXX emiatt most gagyi módon setTimeout() -tal kell csinálnom! :)
+    }
+  };
+  x.open( "GET", "https://jani-szamsora.herokuapp.com/" + n, true );
+  // true = asynchronous
+  console.log( "call_microservice() GET opened" );
+  x.send( null );
+  console.log( "call_microservice() GET sent" );
+
+  // khm.. XXX XXX gagyesz, de rendesen callback-kel nem akar menni! :)
+  setTimeout( function() {
+    g("n").value = n;
+    console.log( x.responseText );
+    callback( x.responseText )
+  }, 500 )
+}
+
+function display_result( s ) {
+  console.log( "display_result() start" );
+  g("res").innerHTML =
+    '<span id="res" style="text-weight: bold">' + s + '</span>';
+}
+  
+  </script>
+
 </head>
 
 <body text="#000000">
@@ -21,61 +71,6 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <div style="margin-top: 1em" class="fb-like" data-href="https://sassbalint.github.io/bolg" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
-<br style="margin-bottom: 0.8em"/>
-<script>
-<br style="margin-bottom: 0.8em"/>
-function g( id ) {
-  return document.getElementById( id );
-}
-<br style="margin-bottom: 0.8em"/>
-function call_microservice( n, callback ) {
-  console.log( "call_microservice() start" );
-  var x = new XMLHttpRequest();
-<br style="margin-bottom: 0.8em"/>
-  n = Math.round(parseFloat( n ));
-<br style="margin-bottom: 0.8em"/>
-  // 0 esetén nem kell a heroku-t hívni... :)
-  if ( n <= 0 || isNaN( n ) ) {
-    n = 0;
-    g("n").value = n;
-    callback( n ); return;
-  }
-<br style="margin-bottom: 0.8em"/>
-  g("res").innerHTML = '<span style="font-size: 80%">&hellip;</span>';
-  x.onreadystatechanged = function() {
-    if ( x.readyState<strong class="alert">= 4 && x.status =</strong>200 ) {
-      console.log( ":) do callback: " + x.responseText )
-      callback( x.responseText )
-      // XXX ez vajon miért nem működik,
-      // XXX emiatt most gagyi módon setTimeout() -tal kell csinálnom! :)
-    }
-  };
-  x.open( "GET", "https://jani-szamsora.herokuapp.com/" + n, true );
-  // true = asynchronous
-  console.log( "call_microservice() GET opened" );
-  x.send( null );
-  console.log( "call_microservice() GET sent" );
-<br style="margin-bottom: 0.8em"/>
-  // khm.. XXX XXX gagyesz, de rendesen callback-kel nem akar menni! :)
-  setTimeout( function() {
-    g("n").value = n;
-    console.log( x.responseText );
-    callback( x.responseText )
-  }, 500 )
-}
-<br style="margin-bottom: 0.8em"/>
-function display_result( s ) {
-  console.log( "display_result() start" );
-  g("res").innerHTML =
-    '<span id="res" style="text-weight: bold">' + s + '</span>';
-}
-  
-</script>
-<br style="margin-bottom: 0.8em"/>
-<input type="text" id="n" size="6"/> &rarr;
-<span id="res">??</span>
-<button onclick="call_microservice( g('n').value, display_result )">Namennyi?</button>
-<br style="margin-bottom: 0.8em"/>
 <em>&bdquo;Bolgok, akik programoznak, mert teremtenek valamit,
 ami egyszercsak életre kel és működik.&rdquo;</em>
 <a target="_blank" href="http://szentiras.hu/SZIT/Mt5,1-10">Mt 5,1-10</a>
@@ -101,6 +96,10 @@ Fent grafikonon ábrázoltam
 1-től 500-ig az egyes számokhoz rendelt eredményt.
 Lent az adatok láthatók 1-től 1200-ig,
 ez <a href="data.csv">le is tölthető</a>, ha úgy jobb.
+<br style="margin-bottom: 0.8em"/>
+<input type="text" id="n" size="6"/> &rarr;
+<span id="res">??</span>
+<button onclick="call_microservice( g('n').value, display_result )">Namennyi?</button>
 <br style="margin-bottom: 0.8em"/>
 Ránézésre egyrészt mintha lenne benne valamiféle rendszer,
 másrészt viszont szinte nincs két teljesen egyforma részlet,

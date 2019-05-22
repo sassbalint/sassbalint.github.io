@@ -1,0 +1,50 @@
+  <script>
+
+function g( id ) {
+  return document.getElementById( id );
+}
+
+function call_microservice( n, callback ) {
+  console.log( "call_microservice() start" );
+  var x = new XMLHttpRequest();
+
+  n = Math.round(parseFloat( n ));
+
+  // 0 esetén nem kell a heroku-t hívni... :)
+  if ( n <= 0 || isNaN( n ) ) {
+    n = 0;
+    g("n").value = n;
+    callback( n ); return;
+  }
+
+  g("res").innerHTML = '<span style="font-size: 80%">&hellip;</span>';
+  x.onreadystatechanged = function() {
+    if ( x.readyState == 4 && x.status == 200 ) {
+      console.log( ":) do callback: " + x.responseText )
+      callback( x.responseText )
+      // XXX ez vajon miért nem működik,
+      // XXX emiatt most gagyi módon setTimeout() -tal kell csinálnom! :)
+    }
+  };
+  x.open( "GET", "https://jani-szamsora.herokuapp.com/" + n, true );
+  // true = asynchronous
+  console.log( "call_microservice() GET opened" );
+  x.send( null );
+  console.log( "call_microservice() GET sent" );
+
+  // khm.. XXX XXX gagyesz, de rendesen callback-kel nem akar menni! :)
+  setTimeout( function() {
+    g("n").value = n;
+    console.log( x.responseText );
+    callback( x.responseText )
+  }, 500 )
+}
+
+function display_result( s ) {
+  console.log( "display_result() start" );
+  g("res").innerHTML =
+    '<span id="res" style="text-weight: bold">' + s + '</span>';
+}
+  
+  </script>
+
