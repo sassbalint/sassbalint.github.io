@@ -37,7 +37,7 @@ function call_microservice( n, callback ) {
     g("n").value = n;
     console.log( x.responseText );
     callback( x.responseText )
-  }, 500 )
+  }, 800 )
 }
 
 function display_result( s ) {

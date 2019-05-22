@@ -44,7 +44,7 @@ function call_microservice( n, callback ) {
     g("n").value = n;
     console.log( x.responseText );
     callback( x.responseText )
-  }, 500 )
+  }, 800 )
 }
 
 function display_result( s ) {
@@ -97,7 +97,7 @@ Fent grafikonon ábrázoltam
 Lent az adatok láthatók 1-től 1200-ig,
 ez <a href="data.csv">le is tölthető</a>, ha úgy jobb.
 <br style="margin-bottom: 0.8em"/>
-<input type="text" id="n" size="6"/> &rarr;
+<input type="text" id="n" size="10"/> &rarr;
 <span id="res">??</span>
 <button onclick="call_microservice( g('n').value, display_result )">Namennyi?</button>
 <br style="margin-bottom: 0.8em"/>
