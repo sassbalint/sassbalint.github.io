@@ -10,6 +10,10 @@ a-nagy-partparbaj-2019-ep-valasztas.html: a-nagy-partparbaj-2019-ep-valasztas.IN
 	cd jani-szamsora ; make
 	( cat header | incl fb-code | incl "<TIT/>" tit_a-nagy-partparbaj-2019-ep-valasztas | incl "<JS/>" empty ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
 
+isten-vetuletei.html: isten-vetuletei.INFO 2html.sed header fb-code footer tit_isten-vetuletei empty
+	cd jani-szamsora ; make
+	( cat header | incl fb-code | incl "<TIT/>" tit_isten-vetuletei | incl "<JS/>" empty ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
+
 %.html: %.INFO 2html.sed header fb-code footer tit_default empty
 	cd jani-szamsora ; make
 	( cat header | incl fb-code | incl "<TIT/>" tit_default | incl "<JS/>" empty ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
