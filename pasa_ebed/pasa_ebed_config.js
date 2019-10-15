@@ -1,8 +1,8 @@
 // <HONAPROL_HONAPRA_FRISSITENDO>
 //  * aktuális év és hónap szöveggel
-var evho = '2019. június';
+var evho = '2019. november';
 //  * napok száma az aktuális hónapban
-var napokszama = 8;
+var napokszama = 20;
 // </HONAPROL_HONAPRA_FRISSITENDO>
 
 var ar = new Array();
@@ -10,11 +10,11 @@ ar['kcs'] = new Array();
 ar['ncs'] = new Array();
 
 // ha változik az etkezések ára, akkor itt kell átírni
-ar['kcs']['e']  =  480 * napokszama;
-ar['kcs']['nk'] =  630 * napokszama; // e + 150
-ar['kcs']['re'] =  560 * napokszama; // e + 80
-ar['kcs']['eu'] =  560 * napokszama; // e + 80
-ar['kcs']['d']  = 1260 * napokszama; // nk * 2
+ar['kcs']['e']  =  490 * napokszama;
+ar['kcs']['nk'] =  660 * napokszama;
+ar['kcs']['re'] =  580 * napokszama;
+ar['kcs']['eu'] =  580 * napokszama;
+ar['kcs']['d']  = 1360 * napokszama;
 
 // nagycsaládos árak: alap, hogy a teljes ár fele
 var ncsszorzo = 0.5;
