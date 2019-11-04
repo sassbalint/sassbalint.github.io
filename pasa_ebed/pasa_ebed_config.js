@@ -1,8 +1,8 @@
 // <HONAPROL_HONAPRA_FRISSITENDO>
 //  * aktuális év és hónap szöveggel
-var evho = '2019. november';
+var evho = '2019. december';
 //  * napok száma az aktuális hónapban
-var napokszama = 20;
+var napokszama = 15;
 // </HONAPROL_HONAPRA_FRISSITENDO>
 
 var ar = new Array();
