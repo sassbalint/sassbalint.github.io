@@ -1,7 +1,7 @@
 
 all: htmls
 
-htmls: stom-cis-keksze.html szabadalmi-csizma-az-alapkutatas-asztalan.html a-torvenymodositasok-perverzitasa.html a-nagy-partparbaj-2019-ep-valasztas.html innovacio-halalvolgy-turorudi.html isten-vetuletei.html jani-szamsora/index.html bipol.html kozep-europa-hazam.html kereses-korpuszban.html sass-balint.html linz-szex.html linz.html kosci.html hierarchia-ontologia.html
+htmls: vers-ima.html stom-cis-keksze.html szabadalmi-csizma-az-alapkutatas-asztalan.html a-torvenymodositasok-perverzitasa.html a-nagy-partparbaj-2019-ep-valasztas.html innovacio-halalvolgy-turorudi.html isten-vetuletei.html jani-szamsora/index.html bipol.html kozep-europa-hazam.html kereses-korpuszban.html sass-balint.html linz-szex.html linz.html kosci.html hierarchia-ontologia.html
 
 jani-szamsora/index.html: jani-szamsora/index.INFO 2html.sed header fb-code footer tit_default jani-szamsora/data2html.sh jani-szamsora/data jani-szamsora/calcjs.js jani-szamsora/calcui.html
 	cd jani-szamsora ; make
