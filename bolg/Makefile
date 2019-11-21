@@ -7,6 +7,9 @@ jani-szamsora/index.html: jani-szamsora/index.INFO 2html.sed header fb-code foot
 	cd jani-szamsora ; make
 	( cat header | incl fb-code | incl "<TIT/>" tit_default | incl "<JS/>" jani-szamsora/calcjs.js ; cat $< | grep -v "^#" | sed -f 2html.sed | incl "<CALCUI/>" jani-szamsora/calcui.html ; cat footer ) > $@
 
+vers-ima.html: vers-ima.INFO 2html.sed header fb-code footer tit_vers-ima empty
+	( cat header | incl fb-code | incl "<TIT/>" tit_vers-ima | incl "<JS/>" empty ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
+
 stom-cis-keksze.html: stom-cis-keksze.INFO 2html.sed header fb-code footer tit_stom-cis-keksze empty
 	( cat header | incl fb-code | incl "<TIT/>" tit_stom-cis-keksze | incl "<JS/>" empty ; cat $< | grep -v "^#" | sed -f 2html.sed ; cat footer ) > $@
 
