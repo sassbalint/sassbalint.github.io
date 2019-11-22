@@ -23,4 +23,4 @@ s/BIB{\([^}]*\)}{\([^}]*\)}{\([^}]*\)}/<a target="_blank" href="http:\/\/szentir
 s/REF{\([^}]*\)}/(vö: <a class="date" href="#\1">\1<\/a>)/g
 
 s|LNAV{\([^}]*\)}{\([^}]*\)}|<a class="navigarrow" href="https://sassbalint.github.io/\1">\&larr;</a> előző: <a href="https://sassbalint.github.io/\1">\2</a>|
-s|RNAV{\([^}]*\)}{\([^}]*\)}|következő: <a href="https://sassbalint.github.io/\1">\2</a> <a href="https://sassbalint.github.io/\1">\&rarr;</a>|
+s|RNAV{\([^}]*\)}{\([^}]*\)}|következő: <a href="https://sassbalint.github.io/\1">\2</a> <a class="navigarrow" href="https://sassbalint.github.io/\1">\&rarr;</a>|
