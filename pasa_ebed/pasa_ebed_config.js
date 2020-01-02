@@ -1,8 +1,8 @@
 // <HONAPROL_HONAPRA_FRISSITENDO>
 //  * aktuális év és hónap szöveggel
-var evho = '2020. január';
+var evho = '2020. február';
 //  * napok száma az aktuális hónapban
-var napokszama = 19;
+var napokszama = 20;
 // </HONAPROL_HONAPRA_FRISSITENDO>
 
 var ar = new Array();
