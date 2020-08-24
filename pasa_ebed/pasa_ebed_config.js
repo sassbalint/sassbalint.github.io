@@ -1,8 +1,8 @@
 // <HONAPROL_HONAPRA_FRISSITENDO>
 //  * aktuális év és hónap szöveggel
-var evho = '2020. április';
+var evho = '2020. szeptember';
 //  * napok száma az aktuális hónapban
-var napokszama = 16;
+var napokszama = 22;
 // </HONAPROL_HONAPRA_FRISSITENDO>
 
 var ar = new Array();
@@ -14,7 +14,7 @@ ar['kcs']['e']  =  490 * napokszama;
 ar['kcs']['nk'] =  660 * napokszama;
 ar['kcs']['re'] =  580 * napokszama;
 ar['kcs']['eu'] =  580 * napokszama;
-ar['kcs']['d']  = 1360 * napokszama;
+ar['kcs']['d']  = 1440 * napokszama;
 
 // nagycsaládos árak: alap, hogy a teljes ár fele
 var ncsszorzo = 0.5;
