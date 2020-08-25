@@ -12,7 +12,7 @@ ar['ncs'] = new Array();
 // ha változik az etkezések ára, akkor itt kell átírni
 ar['kcs']['e']  =  490 * napokszama;
 ar['kcs']['nk'] =  660 * napokszama;
-ar['kcs']['re'] =  580 * napokszama;
+ar['kcs']['te'] =  580 * napokszama;
 ar['kcs']['eu'] =  580 * napokszama;
 ar['kcs']['d']  = 1440 * napokszama;
 
@@ -21,7 +21,7 @@ var ncsszorzo = 0.5;
 
 ar['ncs']['e']  = ar['kcs']['e']  * ncsszorzo;
 ar['ncs']['nk'] = ar['kcs']['nk'] * ncsszorzo;
-ar['ncs']['re'] = ar['kcs']['re'] * ncsszorzo;
+ar['ncs']['te'] = ar['kcs']['te'] * ncsszorzo;
 ar['ncs']['eu'] = ar['kcs']['eu'] * ncsszorzo;
 ar['ncs']['d']  = ar['kcs']['d']  * ncsszorzo;
 
