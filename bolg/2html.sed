@@ -1,8 +1,8 @@
 s/ _\([^_][^_]*\)_ /<em>\1<\/em>/g
 s/ -\([^-][^-]*\)- /<strong>\1<\/strong>/g
-s/ =\([^ ][^_]*[^ ]\)= /<strong class=\"alert\">\1<\/strong>/g
-s/ @\([^ ][^_]*[^ ]\)@ /<code>\1<\/code>/g
-s/ +\([^ ][^_]*[^ ]\)+ /<span style="font-size: 80%">\1<\/span>/g
+s/ =\([^ ][^=]*[^ ]\)= /<strong class=\"alert\">\1<\/strong>/g
+s/ @\([^ ][^@]*[^ ]\)@ /<code>\1<\/code>/g
+s/ +\([^ ][^+]*[^ ]\)+ /<span style="font-size: 80%">\1<\/span>/g
 s/,,/\&bdquo;/g
 s/''/\&rdquo;/g
 s/[~]/\&sim;/g
