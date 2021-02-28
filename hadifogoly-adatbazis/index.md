@@ -9,7 +9,6 @@ adatait tartalmazó kartonok szkennelt képét,
 Az adatbázisban a magyar hadifoglyok által bediktált
 személyes adatok cirill betűkkel szerepelnek,
 ahogy azt az adatokat lejegyző orosz katona éppen hallotta.
-
 Ezen túl még egy torzulást szenvedett az adat,
 mikor a 2010-es évek során az orosz kollégák
 elkészítették a kartonok alapján az adatbázist úgy,
@@ -21,25 +20,17 @@ Az adatok automatikus orosz-magyar átírását, helyreállítását
 a Nyelvtudományi Intézetben végeztük.
 
 A feladat tehát
-```txt
-Ковач Йожеф -> Kovács József
-```
+`Ковач Йожеф -> Kovács József`
 transzkripció megvalósítása volt.
 A nehézséget az okozza, hogy a torzulások miatt
 a betű-betű megfeleltetés a legritkább esetben ad helyes megoldást.
 Tömegesen találkozunk, olyan nehezen algoritmizálható
 esetekkel, mint:
-```txt
-Цилбауер -> Zielbauer
-Дейло -> Béla
-Саотморской -> Szatmár
-Гонграмеде -> Csongrád
-Кишкупфьилстьгаза -> Kiskunfélegyháza
-```
+`Цилбауер -> Zielbauer`, `Дейло -> Béla`,
+`Саотморской -> Szatmár`, `Гонграмеде -> Csongrád`
+vagy `Кишкупфьилстьгаза -> Kiskunfélegyháza`.
 Sokszor több egyenrangú esetleges megoldás adódik, pl:
-```txt
-Эрин -> Ernő;Ervin;Erik
-```
+`Эрин -> Ernő;Ervin;Erik`.
 
 [Előadás](http://tinyurl.com/sb-ea-hadifoglyok-matu2020) a munkálatokról a 2020-as Magyar Tudomány Ünnepén.
 
@@ -58,4 +49,6 @@ hogy mi múlik azon, hogy az ember _Hegyi_ vagy esetleg _Gegyi_
 néven szerepel a névsorban.
 [Ez itt a kérdés, M5, 2021. február 22.](https://mediaklikk.hu/video/ez-itt-a-kerdes-2021-02-22-i-adas)
 a 13. perctől.
+
+(c) Sass Bálint -- sassbalint kukac gmail pont com
 
