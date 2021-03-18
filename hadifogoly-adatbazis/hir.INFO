@@ -1,0 +1,99 @@
+<strong>
+Magyarország sok évtized után kapta meg Oroszországtól
+a magyar hadifoglyok és civil elhurcoltak adatait.
+Az adatok feldolgozását követően február 25-én
+nyílt meg az erről szóló,
+[Magyar Nemzeti Levéltár által üzemeltetett kereshető adatbázis.](https://adatbazisokonline.hu/adatbazis/szovjet-taborok-magyar-foglyai)
+Az adatbázis teljesnek tekinthető,
+így jelentős forrás a kutatás számára
+és ugyanilyen fontos a nagyközönség számára is.
+Az érdeklődők megismerhetik a rendelkezésre álló
+információkat, rátalálhatnak benne
+a szovjet táborokat megjárt
+családtagokra, rokonokra.
+A Nyelvtudományi Intézet munkatársai végezték
+az anyag automatikus átültetését magyarra.
+</strong>
+
+A Magyar Nemzeti Levéltár 2019-ben kapta meg
+az Orosz Állami Hadilevéltártól
+a 682000 magyar hadifogoly és civil elhurcolt alapvető
+adatait tartalmazó kartonok digitalizált, szkennelt képét,
+és az ebből készített adatbázist.
+Ez a személyekhez köthető legfontosabb információkat tartalmazza:
+a fogolyként nyilvántartott személy vezeték- és keresztnevét,
+orosz szokásnak megfelelően az apai keresztnevet,
+a rendfokozatot,
+a születés helyét és idejét,
+a fogságba esés helyét és idejét,
+a távozás idejét és
+az elbocsátó tábort,
+illetve amennyiben az illető személy elhunyt,
+az elhalálozásának időpontját.
+
+A kartonokon természetesen minden cirill betűkkel szerepel.
+Nemcsak az orosz nyelvű adatok, hanem a magyar nyelvűek is,
+mint a vezetéknév, a keresztnév, illetve a földrajzi helyek
+-- születés és fogságba esés helye -- egyes elemei.
+A feldolgozás során a nyelvi problémát
+az jelentette, hogy a magyar foglyok által bediktált
+magyar nyelvű személyes adatok
+cirill betűs formában állnak rendelkezésre,
+ahogy azt az adatokat felvevő általában <strong>orosz katona
+hallás után éppen leírta.</strong>
+
+További torzulást szenvedett az adat,
+mikor a 2010-es évek során az orosz kollégák
+elkészítették a kartonok alapján az adatbázist úgy,
+hogy 70 évvel korábbi kézírás alapján
+rögzítették az általuk nem értett magyar nyelvű
+de cirill betűkkel leírt szövegeket.
+
+Az adatok automatikus orosz-magyar átírását, helyreállítását
+a Nyelvtudományi Intézet munkatársai végezték
+ _Sass Bálint_  vezetésével.
+A feladat tehát
+ @<strong>Ковач Йожеф -> Kovács József</strong>@ 
+transzkripció megvalósítása volt.
+A nehézséget az okozza, hogy a torzulások miatt
+a betű-betű megfeleltetés a legritkább esetben ad helyes megoldást.
+Tömegesen találkozunk, olyan nehezen algoritmizálható
+esetekkel, mint:
+ @Цилбауер -> Zielbauer@ ,
+ @Дейло -> Béla@ ,
+ @Саотморской -> Szatmár@ ,
+ @Гонграмеде -> Csongrád@ 
+vagy
+ @Кишкупфьилстьгаза -> Kiskunfélegyháza@ .
+Sok esetben több egyenrangú esetleges megoldás adódik,
+melyek között automatikusan már
+nem lehet vagy nem érdemes dönteni, például:
+ @Эрин -> Ernő;Ervin;Erik@ .
+
+A munkálatok részleteiről a 2021-es
+Magyar Számítógépes Nyelvészeti Konferencián
+konferencián elhangzott
+[előadásból](https://www.youtube.com/watch?v=3aHsfo5qxKE)
+és a hozzá tartozó
+[publikációból](http://real.mtak.hu/121986),
+valamint a 2020-as Magyar Tudomány Ünnepén elhangzott
+[előadásból](http://tinyurl.com/sb-ea-hadifoglyok-matu2020)
+lehet tájékozódni.
+Az automatikus átíró-helyreállító eszköz [megtalálható a  @github@ -on.](https://github.com/dlt-rilmta/hadifogoly-adatbazis)
+
+ -Érdemes megtekinteni-  az
+[Ez itt a kérdés, 2021. február 22-i adását](https://mediaklikk.hu/video/ez-itt-a-kerdes-2021-02-22-i-adas)
+a 13. perctől.
+Egy volt hadifogoly emlékezik vissza arra,
+hogy mi múlik azon, hogy az ember  _Hegyi_  vagy esetleg  _Gegyi_ 
+-- a  @h-g@  csere az egyik tipikus elírás --
+néven szerepel a névsorban.
+Szemléletesen mutatja be ez rövid részlet
+a nyelvi problémát, amelynek a kezelésére
+a Nyelvtudományi Intézet munkatársai vállalkoztak.
+
+A 2021. február 25-én,
+a kommunizmus áldozatainak emléknapján megnyílt,
+szabadon kereshető, nyilvános
+[adatbázis a Magyar Nemzeti Levéltár oldalán érhető el.](https://adatbazisokonline.hu/adatbazis/szovjet-taborok-magyar-foglyai)
+
