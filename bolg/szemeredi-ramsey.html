@@ -1,0 +1,212 @@
+<!doctype html public "-//w3c//dtd html 3.2//en">
+
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>
+#20 Szemerédi prof és a Ramsey-tétel @ sassbalint.github.io/BOLG
+</title>
+  <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+
+<body text="#000000">
+
+<h1>BOLG</h1>
+
+<br style="margin-bottom: 0.8em"/>
+<em>&bdquo;Bolgok, akik programoznak, mert teremtenek valamit,
+ami egyszercsak életre kel és működik.&rdquo;</em>
+<a target="_blank" href="http://szentiras.hu/SZIT/Mt5,1-10">Mt 5,1-10</a>
+<br style="margin-bottom: 0.8em"/>
+<a class="navigarrow" href="https://sassbalint.github.io/bolg/vigassy-mihaly-atya-nemcsak-hanem-is.html">&larr;</a> előző: <a href="https://sassbalint.github.io/bolg/vigassy-mihaly-atya-nemcsak-hanem-is.html">in memoriam Vigassy Mihály atya</a> |
+következő: <a href="https://sassbalint.github.io/bolg/hierarchia-ontologia.html">hierarchikus menü és ontológia</a> <a class="navigarrow" href="https://sassbalint.github.io/bolg/hierarchia-ontologia.html">&rarr;</a>
+<br style="margin-bottom: 0.8em"/>
+<br/>
+<strong style="font-size: 150%; background: #d0d0d0">Szemerédi prof és a Ramsey-tétel</strong> &ndash; 2021. június 18.
+<br style="margin-bottom: 0.8em"/>
+Olvasom a <a href="https://telex.hu/tudomany/2021/06/16/szemeredi-endre-interju-matematika-grafelmelet-neumann-professzor">Szemerédi Endre matematikus professzorral készített interjút.</a>
+Az újságírónak végül egész jól sikerül belőle kihúzni
+az eredményeinek a közember számára is érhető magyarázatát,
+de elsőre a kutatásait megvilágítandó csak annyit mond:
+<em>&bdquo;Ahhoz hasonlóan, ahogy mondjuk a Ramsey-tétel is kifejti.&rdquo;</em>
+Kicsit úgy, mintha ez már elegendő is lenne,
+úgyis mindenki alsóban tanulja a Ramsey-tételt. :)
+Megnéztem, hogy <strong class="alert">mi rejlik egy ilyen tételben,</strong>
+amire egy matematikus csak mellesleg, illusztrációként hivatkozik.
+<br style="margin-bottom: 0.8em"/>
+<h3>alap</h3>
+<code>[1]</code> Ha 3 skatulya van és 4 golyót osztunk szét bennük,
+akkor <strong>lesz olyan skatulya, amiben 2 golyó van.</strong>
+<br style="margin-bottom: 0.8em"/>
+Eddig oké. :)
+<br style="margin-bottom: 0.8em"/>
+<h3>1. csavar</h3>
+Ugyanez másképp:
+<br style="margin-bottom: 0.8em"/>
+<code>[2]</code> 3 skatulya esetén <strong>van olyan szám</strong> – konkrétan a 4 –,
+hogy ha annyi golyó van, akkor a szétosztás után
+tutira lesz egy 2-golyós skatulya.
+<br style="margin-bottom: 0.8em"/>
+<code>[3]</code> <em>k</em> skatulya esetén van olyan <em>R</em> szám – konkrétan <em>R = k+1</em> –,
+hogy ha <em>R</em> db golyó van, akkor a szétosztás után
+tutira lesz egy 2-golyós skatulya.
+<br style="margin-bottom: 0.8em"/>
+<code>[4]</code> <em>k</em> skatulya esetén van olyan <em>R</em> szám – konkrétan a <em>R = k(n-1)+1</em> –,
+hogy ha <em>R</em> db golyó van, akkor a szétosztás után
+tutira lesz egy <em>n</em> golyót tartalmazó skatulya.
+<br style="margin-bottom: 0.8em"/>
+<img width="62%" style="margin: 1em" alt="skatulya.png"
+ src="skatulya.png"/>
+<br style="margin-bottom: 0.8em"/>
+7 skatulya esetén valóban:
+a 29. golyó kénytelen 5. lenni valamelyik skatulyában.
+<br style="margin-bottom: 0.8em"/>
+<strong class="alert">Ez a skatulya-elv.</strong>
+<br style="margin-bottom: 0.8em"/>
+<h3>2. csavar</h3>
+Mostantól a <em>k</em> skatulyába rakás helyett
+<em>k</em>-féle színnel <strong>színezzük</strong> a golyókat.
+Vegyük észre, hogy ez ugyanaz.
+Amit eddig az első skatulyába tettünk,
+azt mostantól (mondjuk) kékre színezzük,
+amit eddig a másodikba, azt mostantól pirosra stb.
+<br style="margin-bottom: 0.8em"/>
+Az <code>[1]</code> és <code>[4]</code> állítás így átfogalmazva:
+<br style="margin-bottom: 0.8em"/>
+<code>[5]</code> Ha 3 színnel színezünk 4 golyót,
+akkor lesz 2 azonos színű golyó.
+<br style="margin-bottom: 0.8em"/>
+<code>[6]</code> <em>k</em> szín esetén van olyan <em>R</em> szám – konkrétan a <em>R = k(n-1)+1</em> –,
+hogy ha <em>R</em> db golyót színezünk ezekkel a színekkel,
+akkor tutira lesz <em>n</em> db azonos színű golyó.
+<br style="margin-bottom: 0.8em"/>
+<h3>3. csavar</h3>
+Ugyanez másképp:
+<br style="margin-bottom: 0.8em"/>
+<code>[7]</code> <em>k</em> szín esetén van olyan <em>R</em> szám – konkrétan a <em>R = k(n-1)+1</em> –,
+hogy ha <em>R</em> db golyót színezünk ezekkel a színekkel,
+akkor tutira lesz a golyóknak <strong>egy <em>n</em>-elemű részhalmaza,</strong>
+amin belül minden golyó azonos színű.
+<br style="margin-bottom: 0.8em"/>
+<h3>4. csavar</h3>
+Golyókról térjünk át bármilyen entitásokra, pl. emberekre. 
+<br style="margin-bottom: 0.8em"/>
+Most nem az entitásokat,
+hanem az entitások közötti <strong class="alert">kapcsolatokat</strong> színezzük.
+<br style="margin-bottom: 0.8em"/>
+Klasszikus példa emberek esetén az <em>ismeri-e</em> kapcsolat.
+Minden két ember között van egy effajta kapcsolat:
+kékre színezzük a kapcsolatot, ha ismerik egymást,
+és pirosra, ha nem ismerik egymást.
+(Vegyük észre, hogy ez a két szín avagy <em>k = 2</em> esete.)
+<br style="margin-bottom: 0.8em"/>
+Ha Laci ismeri Janit és Imit is, de Jani nem ismeri Imit,
+akkor <code>L-J</code> kék, <code>L-I</code> kék, <code>J-I</code> piros.
+Az ilyesmit gráfokkal ábrázolhatjuk,
+mely csúcsokat (entitásokat)
+és közöttük húzódó éleket (kapcsolatokat) tartalmaz.
+<br style="margin-bottom: 0.8em"/>
+<img width="38%" style="margin: 1em" alt="ismeri.png"
+ src="ismeri.png"/>
+<br style="margin-bottom: 0.8em"/>
+Erre az esetre is igaz a fentiekkel analóg állítás, így hangzik:
+<br style="margin-bottom: 0.8em"/>
+<code>[8]</code> 2 szín esetén van olyan <em>R</em> szám – konkrétan...
+hát azt nem tudjuk, mert képlet nincs rá! –,
+hogy ha <em>R</em> db ember közötti összes kapcsolatot
+színezzük ezekkel a színekkel,
+akkor tutira lesz az embereknek egy <em>n</em>-elemű részhalmaza,
+<strong>amin belül minden kapcsolat azonos színű.</strong>
+<br style="margin-bottom: 0.8em"/>
+Mi a helyzet <em>n = 3</em> esetén?
+<br style="margin-bottom: 0.8em"/>
+<img width="62%" style="margin: 1em" alt="parti.png"
+ src="parti.png"/>
+<br style="margin-bottom: 0.8em"/>
+Első ránézésre <em>R = 5</em> ember elegendőnek tűnhet,
+mert <code>EFG</code> egy olyan háromszög,
+ahol minden kapcsolat kék.
+A középső ábra viszont rácáfol erre:
+itt <em>nincs</em> olyan háromszög, amely egyszínű lenne.
+Ehhez 6 ember kell.
+A jobboldali ábrán látjuk,
+hogy hiába próbálkozunk azzal a módszerrel,
+ami a középső ábrán bejött,
+mindenképp lesz egyszínű háromszög, például <code>XYZ</code>.
+<br style="margin-bottom: 0.8em"/>
+<em>n = 3</em> esetén tehát <em>R = 6</em>. 
+<br style="margin-bottom: 0.8em"/>
+<strong class="alert">Ez a parti probléma.</strong> Hány ember kell ahhoz,
+hogy mindenképp legyen köztük három,
+akik kölcsönösen ismerik egymást <em>vagy</em>
+három, akik közül egyik sem ismeri a másikat?
+A válasz: 6.
+<br style="margin-bottom: 0.8em"/>
+Megjegyezzük, hogy kapcsolatok színezése esetén <em>n > 4</em>-re
+az <em>R</em> értéke mai tudásunk szerint <em>nem ismert.</em>
+<br style="margin-bottom: 0.8em"/>
+<h3>5. csavar</h3> 
+Eleinte entitásokat színeztünk,
+aztán átváltottunk entitások közötti kapcsolatok színezésére.
+Ezt felfoghatjuk úgy is, hogy <strong>entitások párjait</strong> színeztük.
+<br style="margin-bottom: 0.8em"/>
+Így tekintve, egy további paramétert bevezetve,
+újabb irányba általánosíthatjuk az eddigieket:
+<em>t = 1</em>, ha entitásokat színezünk,
+<em>t = 2</em>, ha entitások párjait színezzük.
+Ezt továbbvíve entitások
+<strong>hármasait (<em>t = 3</em>), négyeseit (<em>t = 4</em>),</strong>
+stb. is színezhetjük.
+<br style="margin-bottom: 0.8em"/>
+Utóbbiakra már nehezebb szemléletes példát adni.
+<em>t = 3</em> esetben legyen az a kapcsolat három ember között,
+hogy az össz testtömegük
+kisebb-e 230 kg-nál (kék), vagy nem (piros).
+A gráfos ábrázolás itt már nem működik,
+táblázatban soroljuk fel a kapcsolatokat:
+<br style="margin-bottom: 0.8em"/>
+Aladár 86 kg, Béla 84 kg, Cecil 75 kg, Dénes 65 kg.
+<pre>
+ABC 245 kg piros
+ABD 235 kg piros
+ACD 226 kg kék
+BCD 224 kg kék
+</pre>
+Az <code>ABC</code> háromelemű részhalmazban az összes (1 db)
+hármas kapcsolat triviális módon egyszínű,
+az <code>ABCD</code> négyelemű részhalmazban persze már nem egyszínű
+az összes (fent felsorolt 4 db) kapcsolat.
+<br style="margin-bottom: 0.8em"/>
+A slusszpoén az, hogy <strong>tetszőleges <em>t</em> értékre</strong>
+és bárhány színre igaz a fentiekkel analóg állítás:
+<br style="margin-bottom: 0.8em"/>
+<code>[9]</code> <strong>minden <em>k</em>-ra, <em>n</em>-re és <em>t</em>-re:
+<em>k</em> szín esetén van olyan <em>R</em> szám,
+hogy ha <em>R</em> db entitás közötti összes <em>t</em>-elemű kapcsolatot
+színezzük ezekkel a színekkel,
+akkor tutira lesz az entitásoknak egy <em>n</em>-elemű részhalmaza,
+amin belül minden <em>t</em>-elemű kapcsolat azonos színű.</strong>
+<br style="margin-bottom: 0.8em"/>
+<strong class="alert">Ez a Ramsey-tétel.</strong>
+Amit Szemerédi prof &bdquo;csak úgy&rdquo; említett. :)
+<br style="margin-bottom: 0.8em"/>
+A fent emlegetett <em>R</em> számok a Ramsey-számok.
+<br style="margin-bottom: 0.8em"/>
+Láttuk, hogy <em>t = 2</em> esetén már nincs képlet a Ramsey-számokra.
+Megjegyezzük, hogy <em>t = 3</em> esetén
+az <em>egyetlen ismert</em> Ramsey-szám
+(a triviális <em>n < 4</em> esetektől eltekintve)
+a <em>k = 2</em>, <em>t = 3</em>, <em>n = 4</em> eset, ekkor <em>R = 13</em>.
+Vagyis: ahhoz, hogy hármas kapcsolatok esetén mindenképpen legyen
+négyelemű egyszínű részhalmaz, 13 entitás szükséges.
+<br style="margin-bottom: 0.8em"/>
+Érdemes összevetni a végső <code>[9]</code> állítást a kiinduló <code>[1]</code> állítással. :)
+<br style="margin-bottom: 0.8em"/>
+<div style="margin-top: 1em">
+&copy; <a href="mailto:sassbalint kukac dzsímél pötty com">Sass Bálint</a>
+<!-- a "frissítve:" dolgot hogy is lehetne rendesen megoldani? -->
+</div>
+
+</body>
+</html>
+

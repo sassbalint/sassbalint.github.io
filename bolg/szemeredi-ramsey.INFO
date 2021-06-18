@@ -1,0 +1,197 @@
+
+<em>,,Bolgok, akik programoznak, mert teremtenek valamit,
+ami egyszercsak életre kel és működik.''</em>
+BIB{Mt}{5}{1-10}
+
+LNAV{bolg/vigassy-mihaly-atya-nemcsak-hanem-is.html}{in memoriam Vigassy Mihály atya} |
+RNAV{bolg/hierarchia-ontologia.html}{hierarchikus menü és ontológia}
+
+<br/>
+2021. június 18. == Szemerédi prof és a Ramsey-tétel
+
+Olvasom a [Szemerédi Endre matematikus professzorral készített interjút.](https://telex.hu/tudomany/2021/06/16/szemeredi-endre-interju-matematika-grafelmelet-neumann-professzor)
+Az újságírónak végül egész jól sikerül belőle kihúzni
+az eredményeinek a közember számára is érhető magyarázatát,
+de elsőre a kutatásait megvilágítandó csak annyit mond:
+ _,,Ahhoz hasonlóan, ahogy mondjuk a Ramsey-tétel is kifejti.''_ 
+Kicsit úgy, mintha ez már elegendő is lenne,
+úgyis mindenki alsóban tanulja a Ramsey-tételt. :)
+Megnéztem, hogy  =mi rejlik egy ilyen tételben,= 
+amire egy matematikus csak mellesleg, illusztrációként hivatkozik.
+
+<h3>alap</h3>
+#
+ @[1]@  Ha 3 skatulya van és 4 golyót osztunk szét bennük,
+akkor  -lesz olyan skatulya, amiben 2 golyó van.- 
+
+Eddig oké. :)
+
+<h3>1. csavar</h3>
+#
+Ugyanez másképp:
+
+ @[2]@  3 skatulya esetén  -van olyan szám-  – konkrétan a 4 –,
+hogy ha annyi golyó van, akkor a szétosztás után
+tutira lesz egy 2-golyós skatulya.
+
+ @[3]@   _k_  skatulya esetén van olyan  _R_  szám – konkrétan  _R = k+1_  –,
+hogy ha  _R_  db golyó van, akkor a szétosztás után
+tutira lesz egy 2-golyós skatulya.
+
+ @[4]@   _k_  skatulya esetén van olyan  _R_  szám – konkrétan a  _R = k(n-1)+1_  –,
+hogy ha  _R_  db golyó van, akkor a szétosztás után
+tutira lesz egy  _n_  golyót tartalmazó skatulya.
+
+<img width="62%" style="margin: 1em" alt="skatulya.png"
+ src="skatulya.png"/>
+
+7 skatulya esetén valóban:
+a 29. golyó kénytelen 5. lenni valamelyik skatulyában.
+
+ =Ez a skatulya-elv.= 
+
+<h3>2. csavar</h3>
+#
+Mostantól a  _k_  skatulyába rakás helyett
+ _k_ -féle színnel  -színezzük-  a golyókat.
+Vegyük észre, hogy ez ugyanaz.
+Amit eddig az első skatulyába tettünk,
+azt mostantól (mondjuk) kékre színezzük,
+amit eddig a másodikba, azt mostantól pirosra stb.
+
+Az  @[1]@  és  @[4]@  állítás így átfogalmazva:
+
+ @[5]@  Ha 3 színnel színezünk 4 golyót,
+akkor lesz 2 azonos színű golyó.
+
+ @[6]@   _k_  szín esetén van olyan  _R_  szám – konkrétan a  _R = k(n-1)+1_  –,
+hogy ha  _R_  db golyót színezünk ezekkel a színekkel,
+akkor tutira lesz  _n_  db azonos színű golyó.
+
+<h3>3. csavar</h3>
+#
+Ugyanez másképp:
+
+ @[7]@   _k_  szín esetén van olyan  _R_  szám – konkrétan a  _R = k(n-1)+1_  –,
+hogy ha  _R_  db golyót színezünk ezekkel a színekkel,
+akkor tutira lesz a golyóknak <strong>egy  _n_ -elemű részhalmaza,</strong>
+amin belül minden golyó azonos színű.
+
+<h3>4. csavar</h3>
+#
+Golyókról térjünk át bármilyen entitásokra, pl. emberekre. 
+
+Most nem az entitásokat,
+hanem az entitások közötti  =kapcsolatokat=  színezzük.
+
+Klasszikus példa emberek esetén az  _ismeri-e_  kapcsolat.
+Minden két ember között van egy effajta kapcsolat:
+kékre színezzük a kapcsolatot, ha ismerik egymást,
+és pirosra, ha nem ismerik egymást.
+(Vegyük észre, hogy ez a két szín avagy  _k = 2_  esete.)
+
+Ha Laci ismeri Janit és Imit is, de Jani nem ismeri Imit,
+akkor  @L-J@  kék,  @L-I@  kék,  @J-I@  piros.
+Az ilyesmit gráfokkal ábrázolhatjuk,
+mely csúcsokat (entitásokat)
+és közöttük húzódó éleket (kapcsolatokat) tartalmaz.
+
+<img width="38%" style="margin: 1em" alt="ismeri.png"
+ src="ismeri.png"/>
+
+Erre az esetre is igaz a fentiekkel analóg állítás, így hangzik:
+
+ @[8]@  2 szín esetén van olyan  _R_  szám – konkrétan...
+hát azt nem tudjuk, mert képlet nincs rá! –,
+hogy ha  _R_  db ember közötti összes kapcsolatot
+színezzük ezekkel a színekkel,
+akkor tutira lesz az embereknek egy  _n_ -elemű részhalmaza,
+ -amin belül minden kapcsolat azonos színű.- 
+
+Mi a helyzet  _n = 3_  esetén?
+
+<img width="62%" style="margin: 1em" alt="parti.png"
+ src="parti.png"/>
+
+Első ránézésre  _R = 5_  ember elegendőnek tűnhet,
+mert  @EFG@  egy olyan háromszög,
+ahol minden kapcsolat kék.
+A középső ábra viszont rácáfol erre:
+itt  _nincs_  olyan háromszög, amely egyszínű lenne.
+Ehhez 6 ember kell.
+A jobboldali ábrán látjuk,
+hogy hiába próbálkozunk azzal a módszerrel,
+ami a középső ábrán bejött,
+mindenképp lesz egyszínű háromszög, például  @XYZ@ .
+
+ _n = 3_  esetén tehát  _R = 6_ . 
+
+ =Ez a parti probléma.=  Hány ember kell ahhoz,
+hogy mindenképp legyen köztük három,
+akik kölcsönösen ismerik egymást  _vagy_ 
+három, akik közül egyik sem ismeri a másikat?
+A válasz: 6.
+
+Megjegyezzük, hogy kapcsolatok színezése esetén  _n > 4_ -re
+az  _R_  értéke mai tudásunk szerint  _nem ismert._ 
+
+<h3>5. csavar</h3> 
+#
+Eleinte entitásokat színeztünk,
+aztán átváltottunk entitások közötti kapcsolatok színezésére.
+Ezt felfoghatjuk úgy is, hogy  -entitások párjait-  színeztük.
+
+Így tekintve, egy további paramétert bevezetve,
+újabb irányba általánosíthatjuk az eddigieket:
+ _t = 1_ , ha entitásokat színezünk,
+ _t = 2_ , ha entitások párjait színezzük.
+Ezt továbbvíve entitások
+ -hármasait ( _t = 3_ ), négyeseit ( _t = 4_ ),- 
+stb. is színezhetjük.
+
+Utóbbiakra már nehezebb szemléletes példát adni.
+ _t = 3_  esetben legyen az a kapcsolat három ember között,
+hogy az össz testtömegük
+kisebb-e 230 kg-nál (kék), vagy nem (piros).
+A gráfos ábrázolás itt már nem működik,
+táblázatban soroljuk fel a kapcsolatokat:
+
+Aladár 86 kg, Béla 84 kg, Cecil 75 kg, Dénes 65 kg.
+#
+<pre>
+ABC 245 kg piros
+ABD 235 kg piros
+ACD 226 kg kék
+BCD 224 kg kék
+</pre>
+#
+Az  @ABC@  háromelemű részhalmazban az összes (1 db)
+hármas kapcsolat triviális módon egyszínű,
+az  @ABCD@  négyelemű részhalmazban persze már nem egyszínű
+az összes (fent felsorolt 4 db) kapcsolat.
+
+A slusszpoén az, hogy  -tetszőleges  _t_  értékre- 
+és bárhány színre igaz a fentiekkel analóg állítás:
+
+ @[9]@  <strong>minden  _k_ -ra,  _n_ -re és  _t_ -re:
+ _k_  szín esetén van olyan  _R_  szám,
+hogy ha  _R_  db entitás közötti összes  _t_ -elemű kapcsolatot
+színezzük ezekkel a színekkel,
+akkor tutira lesz az entitásoknak egy  _n_ -elemű részhalmaza,
+amin belül minden  _t_ -elemű kapcsolat azonos színű.</strong>
+
+ =Ez a Ramsey-tétel.= 
+Amit Szemerédi prof ,,csak úgy'' említett. :)
+
+A fent emlegetett  _R_  számok a Ramsey-számok.
+
+Láttuk, hogy  _t = 2_  esetén már nincs képlet a Ramsey-számokra.
+Megjegyezzük, hogy  _t = 3_  esetén
+az  _egyetlen ismert_  Ramsey-szám
+(a triviális  _n < 4_  esetektől eltekintve)
+a  _k = 2_ ,  _t = 3_ ,  _n = 4_  eset, ekkor  _R = 13_ .
+Vagyis: ahhoz, hogy hármas kapcsolatok esetén mindenképpen legyen
+négyelemű egyszínű részhalmaz, 13 entitás szükséges.
+
+Érdemes összevetni a végső  @[9]@  állítást a kiinduló  @[1]@  állítással. :)
+
