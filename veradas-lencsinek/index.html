@@ -4,6 +4,7 @@
 <head>
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>véradás Lencsinek</title>
   <link rel="stylesheet" href="../index.css" type="text/css">
   <link rel="stylesheet"
@@ -12,25 +13,29 @@
     .calligraphic {
       font-family: 'Tangerine', serif;
       font-weight: bold;
-      font-size: 64px;
+      font-size: 12vw;
       color: black;
     }
     .question {
-      font-weight: bold;
-      font-size: 30px;
+      font-size: 6vw;
       color: black;
     }
     .answer {
       font-weight: bold;
-      font-size: 36px;
+      font-size: 8vw;
       color: black;
-      -webkit-border-radius: 8px;
-      -moz-border-radius: 8px;
-      border-radius: 8px;
       background: #60b922;
+      padding: 4vw;
+      -webkit-border-radius: 3vw;
+      -moz-border-radius: 3vw;
+      border-radius: 3vw;
+    }
+    .basic {
+      font-size: 2vw;
+      color: black;
     }
     body {
-      width: 300px;
+      border: 15vw;
       text-align: center;
     }
   </style>
@@ -40,17 +45,17 @@
 
   <div class="calligraphic">véradás Lencsinek</div>
 
-  <img style="margin-top: 18px" width="300px" alt="országos vérellátó" src="veradas-lencsinek-orszagos-verellato.jpg"/>
+  <div style="margin: 2vw" class="question">mikor adjak vért?</div>
 
-  <div style="margin-top: 36px" class="question">mikor adjak vért?</div>
+  <div style="margin: 2vw" class="answer">február közepén</div>
 
-  <div style="margin-top: 3px" class="answer">február közepén</div>
-
-  <div style="margin-top: 36px">
+  <div style="margin: 2vw" class="basic">
   az oldal szükség szerint frissül
   <br/>
   &copy; 2022 &bullet; Sass Bálint
   </div>
+
+  <img style="margin: 2vw" width="64%" alt="országos vérellátó" src="veradas-lencsinek-orszagos-verellato.jpg"/>
 
 </body>
 </html>
