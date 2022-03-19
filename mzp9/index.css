@@ -1,0 +1,64 @@
+body {
+  margin: 4% 4% 4% 4%;
+  font-size: 2.4vw;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: black;
+  background: white;
+}
+
+div {
+  margin: 1.8vw;
+}
+
+div.title1 {
+  margin-top: 3.6vw;
+  margin-bottom: 0vw;
+}
+
+div.title2 {
+  margin-top: -3vw;
+  margin-bottom: 3.6vw;
+}
+
+a {
+  color: #888888;
+}
+
+a:visited {
+  color: #606060;
+}
+
+code {
+  font-size: 90%;
+}
+
+.liex {
+  font-style: italic;
+}
+
+.calligraphic {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  font-size: 15vw;
+  color: black;
+}
+
+
+.alert {
+  font-weight: bold;
+  color: #253250;
+  background: #dfd2b5;
+  padding-top: .2vw;
+  padding-bottom: .2vw;
+  padding-left: .7vw;
+  padding-right: .7vw;
+  -webkit-border-radius: .7vw;
+  -moz-border-radius: .7vw;
+  border-radius: .7vw;
+}
+
+.s {
+  font-size: smaller;
+}
+
