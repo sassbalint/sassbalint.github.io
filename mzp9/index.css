@@ -1,6 +1,6 @@
 body {
   margin: 4% 4% 4% 4%;
-  font-size: 3.2vw;
+  font-size: 2.8vmax;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   text-align: center;
   color: black;
@@ -8,17 +8,17 @@ body {
 }
 
 div {
-  margin: 1.8vw;
+  margin: 1.5vmax;
 }
 
 div.title1 {
-  margin-top: 3.6vw;
-  margin-bottom: 0vw;
+  margin-top: 3.2vmax;
+  margin-bottom: 0vmax;
 }
 
 div.title2 {
-  margin-top: -3vw;
-  margin-bottom: 3.6vw;
+  margin-top: -2.6vmax;
+  margin-bottom: 3.2vmax;
 }
 
 a {
@@ -40,7 +40,7 @@ code {
 .calligraphic {
   font-family: 'Tangerine', serif;
   font-weight: bold;
-  font-size: 15vw;
+  font-size: 13vmax;
   color: black;
 }
 
@@ -49,13 +49,13 @@ code {
   font-weight: bold;
   color: #253250;
   background: #dfd2b5;
-  padding-top: .2vw;
-  padding-bottom: .2vw;
-  padding-left: .7vw;
-  padding-right: .7vw;
-  -webkit-border-radius: .7vw;
-  -moz-border-radius: .7vw;
-  border-radius: .7vw;
+  padding-top: .18vmax;
+  padding-bottom: .18vmax;
+  padding-left: .6vmax;
+  padding-right: .6vmax;
+  -webkit-border-radius: .6vmax;
+  -moz-border-radius: .6vmax;
+  border-radius: .6vmax;
 }
 
 .s {

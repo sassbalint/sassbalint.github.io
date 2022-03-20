@@ -1,6 +1,6 @@
 
 honlap?
- ! https://bit.ly/mzp9 &rarr; https://sassbalint.github.io/mzp9
+ ! https://bit.ly/mzp9 -> https://sassbalint.github.io/mzp9
    -- asszem, ez lesz: egyszerű, gyors, és jó is sztem :)
    x https://bit.ly/mzp9 -- sajnos foglalt volt (!) XXX
    x https://bit.ly/mzp-ima -> ezt meg meggondolatlanul
@@ -9,7 +9,11 @@ honlap?
    !   _kéne egy új jó honlapnév,_ 
      ami ráadásul a bit.ly-ben is szabad
  ? https://sassbalint.github.io/mzp9  _vagy esetleg lehet ez_ 
+   <- https://bit.ly/mzp-ima
  ? https://mzp9.github.io
+ ? https://mzp-ima.github.io -- erre ugye nincs jó link! (!)
+
+ ! a végül kialakuló megosztandó URL bele! (!) XXX :)
 
 dizájn?
  reszponzív (~ rilex)
@@ -19,11 +23,11 @@ dizájn?
 -----
 
 szervezés:
- ? 25-ig szervezés &rarr; 25-én lehet legkésőbb kezdeni!
+ ? 25-ig szervezés -> 25-én lehet legkésőbb kezdeni!
 
 marketing:
 direkt:
- Rácz A, Csalló K, Bucsy Levi, Halm T, Emese anya (&rarr; KK)
+ Rácz A, Csalló K, Bucsy Levi, Halm T, Emese anya (-> KK)
  Bakos Kinga, V-N Balázs, Jávor Anna
  Koppány, Domó, Tibi, Márti, Sarolt
  lájkolókat átnézni!
