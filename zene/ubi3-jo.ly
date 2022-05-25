@@ -1,11 +1,11 @@
-\version "2.14.2"
+\version "2.18.2"
 
 \header {
   title = \markup \medium \italic { "Jó az Úrban ..." }
   subtitle = \markup \medium { ",,a PaSának''" }
   composer = "Sass Bálint el al., 2022"
   %arranger = "XXX vmi"
-  tagline = "LilyPond 2.18.2 - www.lilypond.org - Sass Bálint - sassbalint kukac gmail pont com - 2022. május 14-22."
+  tagline = "LilyPond 2.18.2 - www.lilypond.org - Sass Bálint - sassbalint kukac gmail pont com - 2022. május 14-25."
 }
 
 global = { \key c \major \time 2/2 }
@@ -20,26 +20,26 @@ d1 | c | c2 b | a1 |
 
 felsoszolam_pam = \relative c {
 
-c4\p c d c | b a b b | c2 d | e1 |
-f4 g2 d4 | e d c a | c2 b | a1 |
+c4.\p c8 d4. c8 | b4. a8 b4. b8 | c2 d | e1 |
+f4 g2 d4 | e4. d8 c4. a8 | c2 b | a1 |
 }
 
 felsoszolam = \relative c {
 
-c4\f c d c | b a b b | c2 d | e1 |
-f4 g2 d4 | e d c a | c2 b | a1 |
+c4\f c d c | b a b b | c2( d4) d | e1 |
+f4 g2 d4 | e d c a | c2( b4) b | a1 |
 }
 
 felsoszolam_kiallos = \relative c {
 
-c4 c d c | b a b b | c2 d | e1 |
-f4 g2 d4 | e d c a | c2 b | a2 r |
+c4 c d c | b a b b | c2( d4) d | e1 |
+f4 g2 d4 | e d c a | c2( b4) b | a2 r |
 }
 
 felsoszolam_koda = \relative c {
 
-c4\f c d c | b a b b | c2 d | e1 |
-f4 g2 d4 | e d c a | c2 b | a2 r |
+c4\f c d c | b a b b | c2( d4) d | e1 |
+f4 g2 d4 | e d c a | c2( b4) b | a2 r |
 }
 
 % -----
@@ -52,26 +52,26 @@ b1 | a | f2 g | a1 |
 
 alsoszolam_pam = \relative c {
 
-a4\p a a a | e e e e | a2 g | c1 |
-d4 b2 b4 | c b a e | f2 g | a1 |
+a4.\p a8 a4. a8 | e4. e8 e4. e8 | a2 g | c1 |
+d4 b2 b4 | c4. b8 a4. e8 | f2 g | a1 |
 }
 
 alsoszolam = \relative c {
 
-a4\f a a a | e e e e | a2 g | c1 |
-d4 b2 b4 | c b a e | f2 g | a1 |
+a4\f a a a | e e e e | a2( g4) g | c1 |
+d4 b2 b4 | c b a e | f2( g4) g | a1 |
 }
 
 alsoszolam_kiallos = \relative c {
 
-a4 a a a | e e e e | a2 g | c1 |
-d4 b2 b4 | c b a e | f2 g | a2 r |
+a4 a a a | e e e e | a2( g4) g | c1 |
+d4 b2 b4 | c b a e | f2( g4) g | a2 r |
 }
 
 alsoszolam_koda = \relative c {
 
-a4\f a a a | e e e e | a2 g | c1 |
-d4 b2 b4 | c b a e | f2 g | a2 r |
+a4\f a a a | e e e e | a2( g4) g | c1 |
+d4 b2 b4 | c b a e | f2( g4) g | a2 r |
 }
 
 % -----
@@ -125,6 +125,14 @@ d2 d8 f e d | c2 c8 e d c |
 b2 c4 gis | a1 |
 }
 
+hejehuja_acc = \relative c'' {
+
+a8\f r r a~ a c b a | b r r b~ b d c b |
+a8 a4. g8 g4. | e4 g8 f e2 |
+d8 b r d~ d f e d | c a r c~ c e d c |
+b4-"?" f' e gis, | a c8 b a_"acc." c e gis |
+}
+
 hejehuja = \relative c'' {
 
 a8\f r r a~ a c b a | b r r b~ b d c b |
@@ -160,7 +168,7 @@ b4-"?" f' e gis, | a2 r |
 % -----
 
 %%% egy hanggal följebb (= G-ben) mert ez a klarinét!
-klasszikus_ketto = \relative c' {
+klasszikus_ketto = \relative c {
 
 fis4\mf e8 d r2 | g4 fis8 e r2 |
 fis2 e | d4 fis8 e d2 |
@@ -180,7 +188,7 @@ hejehuja_ketto = \relative c' {
 
 fis8 r r fis~ fis2 | fis8 r r fis~ fis2 |
 fis8 fis4. e8 e4. | d4 fis8 e d2 |
-cis'8 ais r cis~ cis e d cis | b fis r b~ b d cis b |
+cis8 ais r cis~ cis e d cis | b fis r b~ b d cis b |
 g4 e fis2 | b,2 r |
 }
 
@@ -188,7 +196,7 @@ hejehuja_ketto_kiallos = \relative c' {
 
 r1 | r |
 fis8 fis4. e8 e4. | d4 fis8 e d2 |
-cis'8 ais r cis~ cis e d cis | b fis r b~ b d cis b |
+cis8 ais r cis~ cis e d cis | b fis r b~ b d cis b |
 g4 e fis2 | b, r |
 }
 
@@ -218,19 +226,19 @@ gitar_hejehuja_bev = \relative c {
 
 \tempo 4 = 64
 a8\f <a e'> a <a e'>
-\tempo 4 = 76
+\tempo 4 = 72
 a <a e'> a <a e'> |
-\tempo 4 = 88
+\tempo 4 = 80
 a8 <a e'> a <a e'>
-\tempo 4 = 100
+\tempo 4 = 88
+a <a e'> a <a e'> |
+\tempo 4 = 96
+a8 <a e'> a <a e'>
+\tempo 4 = 104
 a <a e'> a <a e'> |
 \tempo 4 = 112
 a8 <a e'> a <a e'>
-\tempo 4 = 124
-a <a e'> a <a e'> |
-\tempo 4 = 136
-a8 <a e'> a <a e'>
-\tempo 4 = 148
+\tempo 4 = 120
 a <a e'> a <a e'> |
 }
 
@@ -308,9 +316,10 @@ kadencia = \relative c' { \masoddallam }
 \mark "F - hejehuja"
 \time 4/4
           \ures_fel
-\tempo 4 = 156
+\tempo 4 = 128
 \mark "G"
           \ures
+\tempo 4 = 156
 \mark "H"
           \ures
 \mark "I"
@@ -321,7 +330,7 @@ kadencia = \relative c' { \masoddallam }
 \mark "K - Parlando impró"
           \ures
 \tempo 4 = 156
-\mark "J"
+\mark "L"
           \felsoszolam_koda
 \bar "|."
         }
@@ -331,7 +340,7 @@ kadencia = \relative c' { \masoddallam }
 
         aa.. _ _ _ _ _ _ _ _ _
 
-        pam.. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+        pamm -- pa.. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
         Jó az Úr -- ban.. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
@@ -381,7 +390,8 @@ kadencia = \relative c' { \masoddallam }
 
         aa.. _ _ _ _ _ _ _ _ _
 
-        pam.. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+        pamm -- pa.. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
 
         Jó az Úr -- ban.. _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
@@ -391,6 +401,12 @@ kadencia = \relative c' { \masoddallam }
 
         }
       }
+
+    >>
+
+\transpose c f
+
+    \new GrandStaff <<
 
       \new Staff = "mandolin" <<
         \set Staff.instrumentName = #"mandolin"
@@ -414,9 +430,10 @@ kadencia = \relative c' { \masoddallam }
           \ures
 \mark "F - hejehuja"
           \ures_fel
-\tempo 4 = 156
+\tempo 4 = 128
 \mark "G"
           \ures
+\tempo 4 = 156
 \mark "H"
           \ures
 \mark "I"
@@ -429,6 +446,7 @@ kadencia = \relative c' { \masoddallam }
 \tempo 4 = 156
 \mark "L"
           \masoddallam_koda
+\bar "|."
         }
       >>
 
@@ -454,7 +472,7 @@ kadencia = \relative c' { \masoddallam }
 % F
           \ures_fel
 % G
-          \hejehuja
+          \hejehuja_acc
 % H
           \hejehuja
 % I
