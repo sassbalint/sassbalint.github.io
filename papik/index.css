@@ -1,0 +1,87 @@
+body {
+  margin: 4% 4% 4% 4%;
+  font-size: 2.5vmax;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+
+/*
+  text-align: center;
+*/
+
+  /* https://colorcodes.io/orange/dark-orange-color-codes/ */
+/*
+  color: white;
+  background: #dc582a;
+*/
+}
+
+img.intext {
+  height: 3.2vmax;
+  margin-bottom: -0.8vmax;
+}
+
+div {
+  margin: 1.4vmax;
+}
+
+div.title {
+  margin-top: 3.3vmax;
+  margin-bottom: 0vmax;
+  color: #dc582a;
+}
+
+div.subtitle {
+  margin-top: -2.5vmax;
+  margin-bottom: 3.3vmax;
+  color: #dc582a;
+}
+
+strong {
+  color: #dc582a;
+}
+
+a {
+  color: white;
+  text-decoration-color: #dc582a;
+}
+
+a:visited {
+  color: white;
+  text-decoration-color: #dc582a;
+}
+
+code {
+  font-size: 90%;
+  color: #dc582a;
+}
+
+.calligraphic {
+  font-family: 'Tangerine', serif;
+  font-weight: bold;
+  font-size: 14vmax;
+}
+
+.s {
+  font-size: 90%;
+}
+
+.c {
+  color: #dc582a;
+}
+
+dl {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+dt {
+  width: 4%; /* add up to 100% */
+  padding: 0;
+  margin: 0;
+}
+dd {
+  float: left;
+  width: 96%; /* add up to 100% */
+  padding: 0;
+  margin: 0;
+}
