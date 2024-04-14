@@ -1,3 +1,6 @@
+
+s/^<!-- .* -->$/<span\/>/g
+
 s/ _\([^_][^_]*\)_ /<em>\1<\/em>/g
 s/ -\([^-][^-]*\)- /<strong>\1<\/strong>/g
 s/ =\([^ ][^=]*[^ ]\)= /<strong class=\"alert\">\1<\/strong>/g
@@ -15,6 +18,7 @@ s/xx/\&times;/g
 s/SSSS/\&szlig;/g
 s/[\~][\~]/\&asymp;/g
 
+s/BLA\[\([^]]*\)\](\([^)]*\))/<a target="_blank" href="\2">\1<\/a>/g
 s/\[\([^]]*\)\](\([^)]*\))/<a href="\2">\1<\/a>/g
 s/^$/<br style=\"margin-bottom: 0.8em\"\/>/
 s/^\(20..\. [^ ]* [0-9]*\.\) == \(.*\)/<strong style=\"font-size: 150%; background: #d0d0d0\">\2<\/strong> \&ndash; \1/
@@ -22,5 +26,5 @@ s/^\(20..\. [^ ]* [0-9]*\.\) == \(.*\)/<strong style=\"font-size: 150%; backgrou
 s/BIB{\([^}]*\)}{\([^}]*\)}{\([^}]*\)}/<a target="_blank" href="http:\/\/szentiras.hu\/SZIT\/\1\2,\3">\1 \2,\3<\/a>/g
 s/REF{\([^}]*\)}/(vö: <a class="date" href="#\1">\1<\/a>)/g
 
-s|LNAV{\([^}]*\)}{\([^}]*\)}|<a class="navigarrow" href="https://sassbalint.github.io/\1">\&larr;</a> előző: <a href="https://sassbalint.github.io/\1">\2</a>|
-s|RNAV{\([^}]*\)}{\([^}]*\)}|következő: <a href="https://sassbalint.github.io/\1">\2</a> <a class="navigarrow" href="https://sassbalint.github.io/\1">\&rarr;</a>|
+s|LNAV{\([^}]*\)}{\([^}]*\)}|<a class="navigarrow" href="\1">\&larr;</a> előző: <a href="\1">\2</a>|
+s|RNAV{\([^}]*\)}{\([^}]*\)}|következő: <a href="\1">\2</a> <a class="navigarrow" href="\1">\&rarr;</a>|
