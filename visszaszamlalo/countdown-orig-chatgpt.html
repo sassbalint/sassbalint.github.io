@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Countdown</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:2rem;background:#f7f9fc;color:#0b1220}
+    .card{max-width:520px;margin:1.5rem auto;padding:1.25rem;border-radius:12px;background:white;box-shadow:0 6px 18px rgba(10,20,40,0.06)}
+    h1{font-size:1.25rem;margin:0 0 0.75rem}
+    .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+    input[type=datetime-local]{padding:.5rem;border-radius:8px;border:1px solid #e3e8ef}
+    button{padding:.5rem .75rem;border-radius:8px;border:0;background:#2563eb;color:white;cursor:pointer}
+    button.secondary{background:#e6eefc;color:#0b1220}
+    .countdown{display:flex;gap:8px;justify-content:center;font-weight:600;font-size:1.75rem}
+    .unit{text-align:center;padding:.5rem .75rem;background:#f1f5f9;border-radius:8px;min-width:66px}
+    .label{font-size:.65rem;color:#475569;font-weight:500;margin-top:.35rem}
+    .message{margin-top:.75rem;text-align:center;color:#065f46;font-weight:600}
+    footer{font-size:.75rem;color:#64748b;margin-top:.75rem;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Countdown to a certain time</h1>
+
+    <div class="controls">
+      <input id="targetInput" type="datetime-local" aria-label="Target date and time">
+      <button id="setBtn">Set target</button>
+      <button id="nowPlusBtn" class="secondary">+ 1 hour from now</button>
+      <button id="clearBtn" class="secondary">Clear</button>
+    </div>
+
+    <div id="countdown" class="countdown" aria-live="polite">
+      <div class="unit"><div id="days">—</div><div class="label">Days</div></div>
+      <div class="unit"><div id="hours">—</div><div class="label">Hours</div></div>
+      <div class="unit"><div id="minutes">—</div><div class="label">Minutes</div></div>
+      <div class="unit"><div id="seconds">—</div><div class="label">Seconds</div></div>
+    </div>
+
+    <div id="message" class="message"></div>
+    <footer>Times are based on your local timezone (the browser).
+    </footer>
+  </div>
+
+  <script>
+    // Simple countdown script
+    const targetInput = document.getElementById('targetInput');
+    const setBtn = document.getElementById('setBtn');
+    const nowPlusBtn = document.getElementById('nowPlusBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minsEl = document.getElementById('minutes');
+    const secsEl = document.getElementById('seconds');
+    const messageEl = document.getElementById('message');
+
+    let targetTime = null; // Date object or null
+    let timerId = null;
+
+    function pad(n){ return String(n).padStart(2, '0'); }
+
+    function update() {
+      if (!targetTime) return;
+      const now = new Date();
+      let diff = targetTime - now; // milliseconds
+
+      if (diff <= 0) {
+        // reached or passed
+        clearInterval(timerId);
+        timerId = null;
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minsEl.textContent = '00';
+        secsEl.textContent = '00';
+        messageEl.textContent = "Time's up!";
+        return;
+      }
+
+      const seconds = Math.floor(diff / 1000) % 60;
+      const minutes = Math.floor(diff / (1000 * 60)) % 60;
+      const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+      daysEl.textContent = pad(days);
+      hoursEl.textContent = pad(hours);
+      minsEl.textContent = pad(minutes);
+      secsEl.textContent = pad(seconds);
+      messageEl.textContent = '';
+    }
+
+    function startTimer() {
+      if (timerId) clearInterval(timerId);
+      update();
+      timerId = setInterval(update, 250);
+    }
+
+    setBtn.addEventListener('click', ()=>{
+      const v = targetInput.value;
+      if (!v) { alert('Pick a date and time in the input'); return; }
+      // value from datetime-local is interpreted as local time
+      targetTime = new Date(v);
+      if (isNaN(targetTime)) { alert('Invalid date'); return; }
+      startTimer();
+    });
+
+    nowPlusBtn.addEventListener('click', ()=>{
+      const d = new Date();
+      d.setHours(d.getHours() + 1);
+      targetTime = d;
+      // fill the input so user sees it
+      const isoLocal = d.toISOString().slice(0,16);
+      // toISOString is UTC; convert to local by building the parts
+      const tzOffset = d.getTimezoneOffset();
+      const local = new Date(d.getTime() - tzOffset*60000);
+      targetInput.value = local.toISOString().slice(0,16);
+      startTimer();
+    });
+
+    clearBtn.addEventListener('click', ()=>{
+      targetTime = null;
+      if (timerId) { clearInterval(timerId); timerId = null; }
+      daysEl.textContent = '—'; hoursEl.textContent = '—'; minsEl.textContent = '—'; secsEl.textContent = '—';
+      messageEl.textContent = '';
+      targetInput.value = '';
+    });
+
+    // Optional: allow pressing Enter in the input to set
+    targetInput.addEventListener('keydown', (e)=>{ if (e.key === 'Enter') setBtn.click(); });
+
+    // Example: prefill with 1 minute from now so the demo shows something immediately
+    (function prefillDemo(){
+      const d = new Date(Date.now() + 60*1000);
+      const tzOffset = d.getTimezoneOffset();
+      const local = new Date(d.getTime() - tzOffset*60000);
+      targetInput.value = local.toISOString().slice(0,16);
+    })();
+  </script>
+</body>
+</html>
+
