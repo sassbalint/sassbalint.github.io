@@ -1,0 +1,63 @@
+body {
+  margin: 7% 7% 7% 7%;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: smaller
+}
+
+div.dolog {
+  margin-bottom: 0.3em;
+}
+
+div.kepecske {
+  float: left;
+  margin-right: 0.8em;
+  margin-bottom: 96em;
+}
+
+.ext {
+  font-size: 80%;
+}
+
+code {
+  font-size: 110%;
+}
+
+code.titkos {
+  color: white;
+  font-size: 110%;
+}
+
+.s {
+  font-size: smaller;
+}
+
+a {
+  color: #888888;
+}
+
+a:visited {
+  color: #606060;
+}
+
+a.date {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+a.navigarrow {
+  font-size: 250%;
+  text-decoration: none;
+}
+
+.noalert {
+  background: #ffffff;
+}
+
+.alert {
+  background: #ffff00;
+}
+
+td.r {
+  text-align: right;
+}
