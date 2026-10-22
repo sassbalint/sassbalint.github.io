@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Forradalom 70 – Programok · 2026. október 23.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── Forrás: forradalom70.kormany.hu ── */
+:root {
+  --bg:          #fbf6f0;
+  --bg-100:      #f6f0eb;
+  --bg-200:      #f0ebe8;
+  --border:      #d2c9c1;
+  --muted:       #8d887b;
+  --text-subtle: #64635f;
+  --text:        #1f1f1e;
+  --dark:        #31302e;
+  --darker:      #42413e;
+  --red:         #cd2a3e;
+  --red-light:   #fdf3f4;
+  --teal:        #0b5456;
+  --teal-light:  #f0f8f7;
+  --blue:        #0050a0;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15.6px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Sticky top container ── */
+#sticky-top {}
+
+/* ── Header ── */
+header {
+  background: var(--darker);
+  padding: 20px 20px 16px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.header-logo { flex-shrink: 0; }
+.header-logo svg { height: 44px; width: auto; }
+.header-text {}
+.header-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #f0ebe8;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.header-sub {
+  font-size: 0.8em;
+  color: #b1a99c;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.header-sub a { color: #86aac5; text-decoration: none; }
+.header-sub a:hover { text-decoration: underline; }
+
+/* ── Flag stripe ── */
+.flag-stripe {
+  height: 5px;
+  background: linear-gradient(to right, var(--red) 33.33%, #fbf6f0 33.33% 66.66%, #477050 66.66%);
+}
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 8px 20px 7px;
+  font-size: 0.8em;
+  align-items: center;
+  color: var(--text-subtle);
+  background: var(--bg-200);
+  border-bottom: 1px solid var(--border);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── Table wrapper ── */
+.wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 16px 12px 12px; }
+table { border-collapse: collapse; min-width: 100%; font-size: 1em; }
+th, td { border: 1px solid var(--border); vertical-align: top; padding: 5px 8px; }
+
+/* ── Sticky thead ── */
+thead th { position: sticky; z-index: 5; }
+thead th.t { z-index: 7; left: 0; }
+
+/* ── Time column ── */
+.t {
+  background: var(--darker);
+  color: #d2c9c1;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  min-width: 60px;
+  font-size: 0.92em;
+  letter-spacing: 0.02em;
+  vertical-align: top;
+}
+th.t { white-space: normal; }
+td.t { position: sticky; left: 0; z-index: 2; box-shadow: 2px 0 4px rgba(0,0,0,.15); }
+
+/* ── Time filter select ── */
+#tfilt {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 0.78em;
+  font-family: inherit;
+  padding: 3px 2px;
+  border: 1px solid #53524f;
+  border-radius: 3px;
+  background: #252420;
+  color: #d2c9c1;
+  cursor: pointer;
+  outline: none;
+}
+#tfilt:focus { border-color: var(--red); }
+
+/* ── Group headers ── */
+.gh-a {
+  background: var(--teal);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.84em;
+  padding: 7px 8px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Venue headers ── */
+.vh-k {
+  background: color-mix(in srgb, var(--red) 85%, #000);
+  color: #fff;
+  font-size: 0.76em;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 6px;
+  min-width: 230px;
+  max-width: 280px;
+}
+.vh-a {
+  background: color-mix(in srgb, var(--teal) 85%, #000);
+  color: #fff;
+  font-size: 0.76em;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 6px;
+  min-width: 140px;
+  max-width: 175px;
+}
+abbr { text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,.45); cursor: help; }
+
+/* ── Data cells ── */
+td.empty  { background: var(--bg-100); }
+td.filled { background: #fff; }
+td.vk-col.filled { background: var(--red-light); }
+td.va-col.filled { background: var(--teal-light); }
+
+/* ── Events ── */
+.event { padding: 1px 0; }
+.event a { color: var(--blue); text-decoration: none; }
+.event a:hover { text-decoration: underline; }
+td.vk-col .event a { color: color-mix(in srgb, var(--red) 80%, #000); }
+td.va-col .event a { color: var(--teal); }
+.event strong { display: block; font-size: 0.83em; font-weight: 600; line-height: 1.3; }
+.event .ptype { font-size: 0.72em; color: var(--text-subtle); line-height: 1.2; }
+.subloc { display: block; font-size: 0.70em; color: var(--muted); margin-top: 2px; }
+hr.sep { border: none; border-top: 1px dashed var(--border); margin: 5px 0; }
+.fam { font-size: 0.88em; }
+
+/* ── Footer ── */
+.note {
+  font-size: 0.75em;
+  color: var(--text-subtle);
+  padding: 6px 20px 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+  background: var(--bg-200);
+  line-height: 1.6;
+}
+</style>
+</head>
+<body>
+
+<div id="sticky-top">
+<header>
+  <div class="header-logo">
+    <svg width="157" height="56" viewBox="0 0 157 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="1956 logó">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M32.908 13.7187C37.6822 13.7187 41.4511 15.2893 44.2213 18.436C46.9893 21.583 48.3755 25.9019 48.3755 31.3987L48.3888 31.393C48.3888 38.4018 46.3825 44.2502 42.3679 48.95C38.3554 53.65 33.3376 56 27.3123 56C24.7923 56 22.7506 55.4666 21.1961 54.3942C19.6363 53.3217 18.8564 51.9503 18.8564 50.2743C18.8564 49.0556 19.2373 48.0825 20.0052 47.3499C20.7734 46.6175 21.7978 46.2483 23.0717 46.2483C25.4588 46.2483 26.6501 47.2742 26.6501 49.3311C26.6501 50.251 26.3711 50.9894 25.8175 51.5344C25.5186 51.8684 24.8166 52.3547 23.7094 52.9818C23.4526 53.1048 23.3286 53.2983 23.3286 53.5502C23.3286 54.4701 24.5664 54.9333 27.0487 54.9333C30.4301 54.9333 33.1162 53.0462 35.1047 49.2723C37.0932 45.4983 38.0875 41.2207 38.0875 36.439C35.8731 38.4957 33.1472 39.5212 29.9075 39.5212C26.287 39.5212 23.2688 38.3372 20.8629 35.964C18.4576 33.5965 17.2487 30.6665 17.2487 27.1857C17.2487 23.2827 18.7313 20.0653 21.6904 17.5278C24.6484 14.9904 28.3951 13.7188 32.908 13.7187ZM32.7287 14.7797C31.3668 14.7798 30.1511 15.3421 29.086 16.4731C27.465 18.19 26.6568 21.1377 26.6568 25.3217C26.6568 33.4791 28.7472 37.5576 32.9191 37.5576C34.8367 37.5576 36.3912 36.5968 37.587 34.6689C38.7783 32.7467 39.3807 30.2327 39.3807 27.1388C39.3807 22.9135 38.7186 19.737 37.3966 17.6039C36.2473 15.723 34.6884 14.7797 32.7287 14.7797Z" fill="#B0A692"/>
+      <path d="M70.1274 11.5681C70.3953 11.5681 70.5415 11.7221 70.5681 12.0253C70.5526 12.0503 70.5127 12.5805 70.4485 13.6134V15.5998C70.3643 18.4592 70.072 20.1 69.5849 20.5398C69.0955 20.9734 67.1845 21.1903 63.8629 21.1903H57.0869C57.2131 21.1903 56.0461 21.2315 53.5749 21.3134L51.7236 21.378C51.4668 22.72 51.3428 24.5483 51.3428 26.8514C51.3428 28.7384 51.3184 30.479 51.2763 32.0729C54.3012 30.309 57.2663 29.4301 60.1605 29.4301C63.5241 29.4301 66.4892 30.2502 69.0424 31.8852C72.4547 34.0652 74.1576 37.3588 74.1576 41.7656V41.7713C74.1576 46.5123 72.0251 50.2218 67.7624 52.9056C64.6955 54.8335 61.4094 55.8008 57.9217 55.8008C54.8061 55.8008 52.1687 55.1093 49.9964 53.7263C47.8219 52.3434 46.7324 50.6609 46.7324 48.6919C46.7324 47.561 47.1509 46.6174 47.9769 45.8615C48.8117 45.1057 49.8414 44.7307 51.0793 44.7307C52.0137 44.7307 52.8175 45.0472 53.4797 45.6743C54.1395 46.3014 54.4673 47.0807 54.4673 48.0006C54.4673 49.5945 53.6169 50.6846 51.9141 51.2707C51.0615 51.5636 50.6342 51.8803 50.6342 52.2143C50.6342 52.7183 51.1988 53.2341 52.3304 53.7555C53.4619 54.277 54.5758 54.5407 55.6874 54.5407C57.8198 54.5407 59.6534 53.8255 61.1835 52.4014C63.4887 50.2625 64.6357 46.9694 64.6357 42.5217C64.6357 35.3076 61.9275 31.6975 56.5156 31.6975C54.8968 31.6975 53.0855 32.3071 51.0793 33.5203C50.395 33.9422 49.8879 34.276 49.5425 34.5281C49.7993 27.7361 49.9477 22.2393 49.9898 18.0435C50.0318 16.1155 50.6519 14.9199 51.841 14.4569C52.3127 14.2871 53.7587 14.2051 56.1878 14.2051H66.9298C68.2518 14.2051 68.9959 14.0235 69.1686 13.6661C69.3413 13.0683 69.5074 12.4645 69.6801 11.8668C69.7643 11.6677 69.9126 11.5681 70.1274 11.5681Z" fill="#B0A692"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M93.2634 0C95.9073 0 97.9977 0.492556 99.5278 1.47705C101.065 2.46152 101.831 3.79744 101.831 5.4733C101.831 6.56329 101.481 7.4486 100.777 8.11666C100.075 8.79047 99.147 9.12446 97.9977 9.12446C95.7413 9.12444 94.6097 8.18676 94.6097 6.31742C94.6097 5.0282 95.2873 3.98501 96.658 3.1939C97.2957 2.81886 97.6168 2.52571 97.6168 2.32059C97.6168 1.48858 96.3192 1.07248 93.7173 1.07246C92.0144 1.07246 90.4356 1.57663 88.9829 2.5787C86.6379 4.24881 84.7867 6.99123 83.4226 10.7944C82.3974 13.6365 81.7131 16.5433 81.3743 19.5086C83.7614 17.4517 86.505 16.4262 89.6207 16.4262C93.3696 16.4262 96.4676 17.5982 98.9211 19.948C101.372 22.298 102.593 25.275 102.593 28.8847L102.599 28.8732C102.599 32.8171 101.182 36.0578 98.3476 38.5953C95.5154 41.1325 91.9015 42.4042 87.5126 42.4044C83.3805 42.4044 79.8198 41.1033 76.837 38.5014C73.0859 35.2313 71.2103 30.6134 71.2103 24.6597C71.2103 17.6978 73.3295 11.8433 77.57 7.1083C81.8083 2.36763 87.0409 4.42688e-05 93.2634 0ZM86.7198 18.36C85.048 18.36 83.7193 18.9869 82.7362 20.241C81.4917 21.8292 80.8739 24.7593 80.8739 29.0255C80.8739 33.2917 81.6002 36.4914 83.0595 38.6245C84.3039 40.4234 85.8872 41.3198 87.8159 41.3198C91.328 41.3198 93.0862 38.0793 93.0862 31.5922L93.0795 31.6041C93.0795 26.7521 92.5127 23.3292 91.3767 21.3426C90.2385 19.3563 88.6862 18.36 86.7198 18.36Z" fill="#B0A692"/>
+      <path d="M0.446648 14.7734C0.446648 14.3985 1.06623 14.2288 2.29853 14.2698L3.63802 14.3339L12.7772 14.2698H21.1485C22.1306 14.2698 22.62 14.4453 22.62 14.8026L22.631 14.8089C22.631 15.0784 22.4406 15.2309 22.0537 15.2719C21.9286 15.2719 20.732 15.3185 18.4755 15.4064C17.0703 15.4474 16.2487 15.6879 16.0167 16.1274C15.7844 16.567 15.6648 18.0028 15.6648 20.4287V38.5661C15.6648 39.152 15.7485 39.5679 15.9212 39.82C16.1772 40.3649 16.9095 40.6343 18.1179 40.6343H19.6664L21.2141 40.7574C21.8569 40.7983 22.1837 40.9451 22.1837 41.1967C22.1837 41.5307 21.8037 41.701 21.0356 41.701H1.53612C0.51219 41.701 0 41.5307 0 41.1967C0.000221439 40.9448 0.178927 40.7866 0.541865 40.7281C0.905246 40.6637 1.91722 40.6343 3.57823 40.6343C5.02489 40.6343 5.92392 40.476 6.26339 40.1655C6.60263 39.8492 6.77558 39.0462 6.77558 37.7511V23.3766C6.77558 18.9404 6.66818 16.5317 6.45981 16.1566C6.12034 15.6117 4.7514 15.3187 2.34614 15.2776C1.07796 15.2776 0.446648 15.1075 0.446648 14.7734Z" fill="#B0A692"/>
+      <path d="M103.715 46.279L116.656 23.4306L116.585 23.2588H102.599V14.4792H127.42V23.1774L126.951 24.0725L112.967 51.3243L103.706 46.279H103.715Z" fill="#DFDCD6"/>
+      <mask id="mask0_253_13" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="127" y="14" width="30" height="28">
+        <path d="M142.376 41.523C138.065 41.523 134.555 40.2301 131.82 37.6532C129.085 35.0764 127.726 31.7852 127.726 27.7977C127.726 23.8102 129.094 20.4196 131.82 17.8518C134.546 15.2839 138.065 14 142.376 14C146.688 14 150.18 15.2839 152.906 17.8698C155.632 20.4469 157 23.7559 157 27.8068C157 31.8574 155.64 35.0854 152.914 37.6623C150.197 40.2392 146.679 41.5321 142.376 41.5321V41.523ZM142.376 33.2408C143.798 33.2408 144.967 32.7255 145.895 31.6856C146.823 30.6459 147.281 29.3438 147.281 27.7705C147.281 26.1974 146.814 24.841 145.886 23.8193C144.949 22.7885 143.789 22.2732 142.385 22.2732C140.981 22.2732 139.794 22.7885 138.858 23.8283C137.921 24.8682 137.462 26.1792 137.462 27.7705C137.462 29.3619 137.921 30.6548 138.849 31.6856C139.777 32.7255 140.955 33.2408 142.385 33.2408H142.376Z" fill="#4A9FA6"/>
+      </mask>
+      <g mask="url(#mask0_253_13)">
+        <path d="M158.564 14H127.473V21.7778H158.564V14Z" fill="#B12121"/>
+        <path d="M158.564 21.7778H127.473V34.2222H158.564V21.7778Z" fill="#DFDCD6"/>
+        <path d="M158.564 34.2222H127.473V42H158.564V34.2222Z" fill="#32854F"/>
+      </g>
+    </svg>
+  </div>
+  <div class="header-text">
+    <div class="header-title">A szabadság összeköt · Programok Budapesten 2026. október 23-án</div>
+    <div class="header-sub">
+      Forrás: <a href="https://forradalom70.kormany.hu/" target="_blank" rel="noopener">forradalom70.kormany.hu</a>
+      · Helyszínek vízszintesen, kezdőidőpontok függőlegesen
+      · Kattints a programcímre a részletekért
+      · <a href="https://facebook.com/balint.sass.3" target="_blank" rel="noopener">Sass Bálint</a> · Készült: Claude Code Sonnet 4.6 segítségével
+    </div>
+  </div>
+</header>
+<div class="flag-stripe"></div>
+<div class="legend">
+  <span class="legend-item"><span class="dot" style="background:var(--red)"></span> Kossuth Lajos tér és környéke</span>
+  <span class="legend-item"><span class="dot" style="background:var(--teal)"></span> id. Antall József rakpart</span>
+  <span class="legend-item">&#x1F46A; = Családbarát &nbsp; &#x1F4CD; = részhelyszín a Kossuth téren belül</span>
+</div>
+</div><!-- /sticky-top -->
+
+<div class="wrapper">
+  <table id="prog"></table>
+</div>
+
+<p class="note">Az oldal az október 23-i budapesti hivatalos programokat tartalmazza az alapértelmezett szűrő szerint.</p>
+
+<script>
+const B = 'https://forradalom70.kormany.hu/program/';
+const _ = (u, t, p, f, s) => ({u, t, p, f: !!f, s: s || null});
+
+const ROWS = [
+  {t:'09:00', k: _('zaszlofelvonas', 'Ünnepélyes zászlófelvonás', 'hivatalos megnyitó ünnepség')},
+  {t:'09:30', k: [
+    _('a-forradalom-emlekezete', 'A forradalom emlékezete', 'városi installáció, utcai kiállítás', 0, 'Andrássy-szobor körül'),
+    _('a-szabadsag-56-pillanata', 'A szabadság 56 pillanata', 'városi installáció, utcai performansz', 0, 'M2 metrómegálló, 2-es villamos megálló és sétány'),
+    _('a-szabadsag-hangja', 'A szabadság hangja', 'városi installáció, színészi performansz', 0, 'Vértanúk tere'),
+    _('a-szabadsag-langja', 'A szabadság lángja', 'városi installáció, akció-performansz', 0, 'V. ker. Szemere u. – Alkotmány u. sarok'),
+    _('a-szabadsag-visszhangja', 'A szabadság visszhangja', 'városi installáció, utcai kiállítás', 0, 'Vértanúk tere'),
+  ]},
+  {t:'10:00', k: _('czutor-zoltan-koncert', 'Czutorok', 'családi koncert', 1), g: [
+    _('a-szabadsag-szinei', 'A szabadság színei', 'közösségi alkotás', 1),
+    _('karzat-szinhaz-nepi-jatekok', 'Karzat Színház – Mester tér', 'gyermekprogram', 1),
+    _('mosolyudvar', 'Mosolyudvar Népi Játszótér', 'kézműves foglalkozás', 1),
+    _('nemezeles', 'Nemezelés Németh Bea nemezkészítővel', 'kézműves foglalkozás', 1),
+    _('roplapnyomda', 'Röplapnyomda', 'közösségi program', 1),
+  ]},
+  {t:'10:30', e: _('demografiai-csucs', 'Két farkas lakozik bennem', 'versperformansz')},
+  {t:'11:00',
+    k: _('pupek-minden-kelet-es-nyugat-kozott', 'PUPEK – Ifjú Szívek Táncegyüttesének táncszínházi előadása', 'táncszínházi előadás'),
+    n: _('vackor', 'Aranyszamár Bábszínház: Vackor kesztyűs játék négy kézre', 'bábszínház', 1),
+    f: _('a-masik-forradalom', "A másik forradalom – alternatív '56", 'irodalmi előadás'),
+    e: _('dante-casino-muhely', "Dante Casino Műhely: A mi '56-unk", 'ifjúsági színházi előadás'),
+    m: _('toth-ilona-monodrama-de', 'Angyalnak született – monodráma Tóth Ilona életéről', 'monodráma'),
+  },
+  {t:'11:30', e: _('pulzus-kollektiva', 'Pulzus Kollektíva: Délután a várost rajzoltuk', 'színházi előadás')},
+  {t:'11:42', k: _('egy-mondat-a-zsarnoksagrol', 'Egy mondat a zsarnokságról', 'versmondás')},
+  {t:'11:45', n: _('kohalmi-buveszshow', 'Kőhalmi Ferenc bűvészshow', 'bűvészműsor', 1)},
+  {t:'11:55', e: _('szabad', 'MATE Rippl-Rónai Művészeti Intézet hallgatói: Szabad?!', 'irodalmi-zenei műsor')},
+  {t:'12:00', m: _('palasti-mate-zenel-1', 'Palásti Máté zenél', 'koncert')},
+  {t:'12:15',
+    n: _('eszter-lanc-zenekar', 'Kárász Eszter és az Eszter-lánc mesezenekar', 'interaktív koncert', 1),
+    e: _('keleti-istvan-muveszeti-iskola', 'Keleti István Művészeti Iskola: A kaukázusi krétakör prológusa', 'előadás részlet'),
+  },
+  {t:'12:20', m: _('honti-ilona-naplojabol-de', 'Ne sírj, édesanya – monodráma Honti Ilona naplójából', 'monodráma')},
+  {t:'12:30', k: _('ismeros-dallamok', 'Amit továbbviszünk', 'koncert')},
+  {t:'12:35', e: _('pecsi-dramaturgok', 'Pécsi Dramaturg Mester osztály: Légy a falon projekt', 'felolvasószínház')},
+  {t:'12:50', n: _('rumi-laszlo-golyalabas', 'Rumi László és barátai: A Nap és a Hold elrablása', 'utcaszínházi előadás', 1)},
+  {t:'13:00', f: _('56-arcai', "'56 arcai – irodalmi és történelmi portrésor", 'előadás')},
+  {t:'13:05', e: _('komp-kollektiva', 'Komp Kollektíva: Százféle változatban', 'koncert')},
+  {t:'13:20',
+    n: _('sugo-tamburazenekar', 'SUGO tamburazenekar', 'koncert', 1),
+    m: _('palasti-mate-zenel-2', 'Palásti Máté zenél', 'koncert'),
+  },
+  {t:'13:40', m: _('oromolimpia-de', 'Megjártam a Gulágot', 'monodráma')},
+  {t:'13:45', n: _('nem-adom-fel-zenekar', 'Nemadomfel együttes', 'koncert')},
+  {t:'14:00', k: _('5656', '56+56', 'performansz')},
+  {t:'14:50', m: _('toth-ilona-monodrama-du', 'Angyalnak született – monodráma Tóth Ilona életéről', 'monodráma')},
+  {t:'15:00', k: _('magyar-radio-slagerei', 'A Szabad Magyar Rádió dalai', 'koncert')},
+  {t:'15:40', k: _('mennybol-az-angyal', 'Márai Sándor: Mennyből az angyal – Bíró Panna Dominika', 'versmondás')},
+  {t:'15:50',
+    k: _('east56', 'East56', 'zenei előadás'),
+    m: _('palasti-mate-zenel-3', 'Palásti Máté zenél', 'koncert'),
+  },
+  {t:'16:00', k: _('beszed', 'Miniszterelnöki megnyitó beszéd', 'megnyitó')},
+  {t:'16:30', k: _('jatssz-meg', 'Szekeres Adrienn: Játssz még', 'koncert')},
+  {t:'16:50', k: _('megall-az-ido', 'Megáll az idő – Budapest Bár ünnepi koncertje', 'zenei koncert')},
+  {t:'17:00',
+    f: _('faludy-gyorgy', 'Pokolbéli víg napjaim', 'dramatizált felolvasóest'),
+    m: _('honti-ilona-naplojabol-du', 'Ne sírj, édesanya – monodráma Honti Ilona naplójából', 'monodráma'),
+  },
+  {t:'17:05', e: _('alompolgarok-zenekar', 'Álompolgárok Zenekar', 'koncert')},
+  {t:'17:30', n: _('balazs-elemer-group', 'Balázs Elemér Group', 'jazzkoncert')},
+  {t:'18:00',
+    e: _('lagymagany', 'Szász Zsófia: Lágymagány 3.', 'kortárs tánc'),
+    m: _('palasti-mate-zenel-4', 'Palásti Máté zenél', 'koncert'),
+  },
+  {t:'18:20',
+    e: _('piros-ver-az-utcan', 'Piros vér az utcán', 'vers- és zenei műsor'),
+    m: _('oromolimpia-du', 'Megjártam a Gulágot', 'monodráma'),
+  },
+  {t:'18:40', f: _('sarik-peter-trio', 'Sárik Péter trió', 'koncert')},
+  {t:'18:55', e: _('hokom-szinhazi-projekt', 'HöKöM Színházi Projekt: Még egy mondat a zsarnokságról', 'irodalmi est')},
+  {t:'19:00', n: _('jarai-mark-onallo-est', "Járai Márk: Cseh Tamás dalok '56", 'önálló est')},
+  {t:'19:30', e: _('akarsz-e-jatszani-zenekar', 'Akarsz-e játszani?', 'színészzenekar koncert')},
+];
+
+const VCOLS = ['k','g','n','f','e','m'];
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function cellHtml(v, row) {
+  const evts = row[v];
+  if (!evts) return '<td class="empty"></td>';
+  const cls = v === 'k' ? 'vk-col' : 'va-col';
+  const arr = Array.isArray(evts) ? evts : [evts];
+  const inner = arr.map(ev => {
+    const fam = ev.f ? '<span class="fam" title="Családbarát program">&#x1F46A;</span> ' : '';
+    const sub = ev.s ? '<br><span class="subloc">&#x1F4CD; ' + esc(ev.s) + '</span>' : '';
+    return '<div class="event">' + fam +
+      '<a href="' + B + ev.u + '" target="_blank" rel="noopener"><strong>' + esc(ev.t) + '</strong></a>' +
+      '<em class="ptype">' + esc(ev.p) + '</em>' + sub + '</div>';
+  }).join('<hr class="sep">');
+  return '<td class="filled ' + cls + '">' + inner + '</td>';
+}
+
+function build() {
+  const timeSel = '<select id="tfilt"><option value="">&#x25BE; Mindent mutat</option>' +
+    ROWS.filter(r => r.t.endsWith(':00') && r.t !== '09:00').map(r => '<option value="' + r.t + '">' + r.t + '</option>').join('') + '</select>';
+
+  let h = '<thead><tr>' +
+    '<th class="t" rowspan="2">Idő<br>' + timeSel + '</th>' +
+    '<th class="vh-k" rowspan="2">Kossuth Lajos tér és környéke</th>' +
+    '<th class="gh-a" colspan="5">id. Antall József rakpart</th>' +
+    '</tr><tr>' +
+    '<th class="vh-a"><abbr title="id. Antall József rakpart – gyermekfoglalkozások / Röplapnyomda">Gyermekfoglalkozások</abbr></th>' +
+    '<th class="vh-a"><abbr title="id. Antall József rakpart – Nagyszínpad">Nagyszínpad</abbr></th>' +
+    '<th class="vh-a"><abbr title="id. Antall József rakpart – Forradalmárok pódiuma">Forradalmárok pódiuma</abbr></th>' +
+    '<th class="vh-a"><abbr title="id. Antall József rakpart – Generációk pódiuma">Generációk pódiuma</abbr></th>' +
+    '<th class="vh-a"><abbr title="id. Antall József rakpart – Monodrámák pódiuma">Monodrámák pódiuma</abbr></th>' +
+    '</tr></thead><tbody>';
+
+  for (const row of ROWS) {
+    const cls = VCOLS.slice(1).some(v => row[v]) ? 'ra' : 'rk';
+    h += '<tr class="' + cls + '" data-t="' + row.t + '"><td class="t">' + row.t + '</td>';
+    for (const v of VCOLS) h += cellHtml(v, row);
+    h += '</tr>';
+  }
+  h += '</tbody>';
+  document.getElementById('prog').innerHTML = h;
+}
+
+function setupFilter() {
+  document.getElementById('tfilt').addEventListener('change', function() {
+    const sel = this.value;
+    document.querySelectorAll('#prog tbody tr').forEach(tr => {
+      tr.hidden = !!sel && tr.dataset.t < sel;
+    });
+  });
+}
+
+function stickyThead() {
+  const prog = document.getElementById('prog');
+  const thead = prog ? prog.querySelector('thead') : null;
+  if (!thead) return;
+  const y = prog.getBoundingClientRect().top;
+  if (y < 0) {
+    thead.style.transform = 'translateY(' + (-y) + 'px)';
+    thead.style.zIndex = '10';
+  } else {
+    thead.style.transform = '';
+    thead.style.zIndex = '';
+  }
+}
+
+build();
+setupFilter();
+window.addEventListener('scroll', stickyThead, { passive: true });
+window.addEventListener('resize', stickyThead, { passive: true });
+</script>
+</body>
+</html>
